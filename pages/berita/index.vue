@@ -15,7 +15,7 @@
           <FormBeritaCari />
         </div>
         <div class="col-md-9 order-md-3">
-          <BeritaHome />
+          <Berita />
         </div>
         <div class="col-md-3 order-md-2">
           <SidebarBeritaKategori />

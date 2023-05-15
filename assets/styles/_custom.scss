@@ -1,6 +1,6 @@
-@media (min-width: 1024px) {
+@media (min-width: 1151px) {
   .container {
-    max-width: 1023px;
+    max-width: 1150px;
   }
 }
 
@@ -32,9 +32,21 @@ a {
   }
 
   &_bawah {
+    border-top: 4px solid $hitam;
     padding-top: .5rem;
+    padding-bottom: .5rem;
     background-color: $hitam2;
     color: $abumuda2;
+    font-size: $font-size-base - .15rem;
+    a{
+      font-weight: bold;
+      color: $warnasecondary;
+      text-decoration: none;
+      font-size: $font-size-base - .1rem;
+      &:hover{
+        color: lighten($color: $warnadefault, $amount: 40);
+      }
+    }
   }
 }
 

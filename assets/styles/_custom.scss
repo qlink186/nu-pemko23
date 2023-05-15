@@ -1,0 +1,50 @@
+@media (min-width: 1320px) {
+  *{
+    font-family: $font-family;
+    font-size: $font-size-base;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+  .container {
+    max-width: 970px;
+  }
+}
+
+a{
+  &.router-link{
+    &-active{
+      font-weight:600;
+    }
+    &-exact-active{
+      color: $warnasecondary;
+    }
+  }
+}
+
+.footer {
+  color: $abumuda2;
+
+  &_atas {
+    background-color: $hitam;
+  }
+
+  &_bawah {
+    background-color: $hitam2;
+    color: $abumuda1;
+  }
+}
+
+.bgAbu {
+  background-color: $abumuda3;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}

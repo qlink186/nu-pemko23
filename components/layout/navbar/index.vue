@@ -14,6 +14,9 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/berita"><Icon name="fa:newspaper-o" /> Berita</NuxtLink>
           </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/gallery"><Icon name="fa:camera" /> Gallery</NuxtLink>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <Icon name="icomoon-free:folder" /> Data
@@ -27,14 +30,11 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
         </ul>
-        <form class="d-flex" role="search">
+        <!-- <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        </form> -->
       </div>
     </div>
 </nav></template>

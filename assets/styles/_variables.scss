@@ -1,12 +1,20 @@
 $hitam:   rgb(39, 41, 42);
 $hitam2:  rgb(27, 28, 29);
-$abumuda1:  lighten($hitam, 40);
-$abumuda2:  lighten($hitam, 70);
-$abumuda3:  lighten($hitam, 80);
+$abumuda1:  lighten($hitam, 15);
+$abumuda2:  lighten($hitam, 40);
+$abumuda3:  lighten($hitam, 70);
+$abumuda4:  lighten($hitam, 80);
 $biru:    rgb(44,44,100);
 $oren:    rgb(243,171,28);
 $warnadefault: $biru;
 $warnasecondary: $oren;
 
-$font-size-base : .85rem;
-$font-family: 'Roboto', sans-serif;
+:root{
+  --bs-body-font-size: .75rem;
+  --bs-font-sans-serif: 'Nunito', sans-serif;
+}
+
+.list-group {
+  --bs-list-group-item-padding-y: .3rem;
+  --bs-list-group-item-padding-x: .5rem;
+}

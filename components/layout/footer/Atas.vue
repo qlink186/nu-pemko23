@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="col-md-3 order-md-1">
-          kiri
+          <LayoutFooterAtasIdentitas />
         </div>
       </div>
     </div>

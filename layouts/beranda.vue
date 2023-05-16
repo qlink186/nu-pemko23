@@ -15,6 +15,11 @@
         </div>
       </div>
     </div>
+    <div class="container-fluid bgAbu">
+      <div class="container py-4">
+        <LayananMenuBeranda />
+      </div>
+    </div>
     <!--- render page -->
     <slot />
     <div class="footer">

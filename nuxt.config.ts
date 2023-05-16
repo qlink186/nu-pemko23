@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      script: [
+        { src: "https://widget.kominfo.go.id/gpr-widget-kominfo.min.js", type:"text/javascript"},
+      ],
     },
     pageTransition: {
       name: 'page',
@@ -21,8 +24,9 @@ export default defineNuxtConfig({
     families: {
       Roboto: true,
       Nunito: true,
+      Montserrat: true,
       'Josefin+Sans': true,
-      Lato: [100, 300],
+      Lato: [100, 300, 600, 800],
       Raleway: {
         wght: [100, 400],
         ital: [100]

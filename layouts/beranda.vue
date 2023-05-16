@@ -10,8 +10,8 @@
         <div class="col-lg-9 order-lg-2">
           <BeritaHome />
         </div>
-        <div class="col-lg-3 order-lg-1 border" style="min-height:600px;">
-          <h1>GPR</h1>
+        <div class="col-lg-3 order-lg-1">
+          <Gpr />
         </div>
       </div>
     </div>

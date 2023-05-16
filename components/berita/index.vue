@@ -1,13 +1,5 @@
 <template>
-  <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-      The current link item
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-    <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
-  </div>
+  <BeritaListUtama />
 </template>
 
 <script setup lang="ts">

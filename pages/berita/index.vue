@@ -19,6 +19,7 @@
         </div>
         <div class="col-md-3 order-md-2">
           <SidebarBeritaKategori />
+          <SidebarBeritaPopuler />
         </div>
       </div>
     </div>

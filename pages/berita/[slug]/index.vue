@@ -6,7 +6,8 @@
           <h3>Detail Berita</h3>
         </div>
         <div class="col-md-3 order-md-2">
-          <SidebarBeritaKategori />
+          <SidebarBeritaKategori/>
+          <SidebarBeritaPopuler />
         </div>
       </div>
     </div>

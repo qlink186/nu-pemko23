@@ -17,9 +17,11 @@ export default defineNuxtConfig({
     '~/assets/styles/main.scss'
   ],
   buildModules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
-  modules: ['nuxt-icon'],
+  modules: [
+    'nuxt-icon',
+  ],
   googleFonts: {
     families: {
       Roboto: true,

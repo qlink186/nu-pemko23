@@ -4,12 +4,12 @@
       <div class="d-flex w-100 justify-content-between">
         <div class="berita_utama_list_item_gambar">
           <img
-            src="https://picsum.photos/id/19/200/150"
+            src="https://picsum.photos/id/19/250/150"
             class="img-fluid rounded"
             alt="berita2"
           />
         </div>
-        <div class="ps-3">
+        <div class="ps-3 me-auto">
           <p class="mb-1 berita_utama_list_item_opd">Dinas Komunikasi dan Informatika</p>
           <h6 class="mb-1 berita_utama_list_item_judul">Evaluasi Smart City 2022, Wako Rahma : Enam Quic Wins Upaya Pemko Berikan Layanan Terbaik</h6>
           <div class="berita_utama_list_item_isi">
@@ -39,12 +39,12 @@
       <div class="d-flex w-100 justify-content-between">
         <div class="berita_utama_list_item_gambar">
           <img
-            src="https://picsum.photos/id/39/200/150"
+            src="https://picsum.photos/id/39/250/150"
             class="img-fluid rounded"
             alt="berita2"
           />
         </div>
-        <div class="ps-3">
+        <div class="ps-3 me-auto">
           <p class="mb-1 berita_utama_list_item_opd">Dinas Komunikasi dan Informatika</p>
           <h6 class="mb-1 berita_utama_list_item_judul">Dukung Operasi Zebra Seligi 2022, Dishub Tanjungpinang Kerahkan 20 Orang Personilnya</h6>
           <div class="berita_utama_list_item_isi">
@@ -72,12 +72,12 @@
       <div class="d-flex w-100 justify-content-between">
         <div class="berita_utama_list_item_gambar">
           <img
-            src="https://picsum.photos/id/19/200/150"
+            src="https://picsum.photos/id/19/250/150"
             class="img-fluid rounded"
             alt="berita2"
           />
         </div>
-        <div class="ps-3">
+        <div class="ps-3 me-auto">
           <p class="mb-1 berita_utama_list_item_opd">Dinas Komunikasi dan Informatika</p>
           <h6 class="mb-1 berita_utama_list_item_judul">Evaluasi Smart City 2022, Wako Rahma : Enam Quic Wins Upaya Pemko Berikan Layanan Terbaik</h6>
           <div class="berita_utama_list_item_isi">
@@ -107,12 +107,12 @@
       <div class="d-flex w-100 justify-content-between">
         <div class="berita_utama_list_item_gambar">
           <img
-            src="https://picsum.photos/id/39/200/150"
+            src="https://picsum.photos/id/39/250/150"
             class="img-fluid rounded"
             alt="berita2"
           />
         </div>
-        <div class="ps-3">
+        <div class="ps-3 me-auto">
           <p class="mb-1 berita_utama_list_item_opd">Dinas Komunikasi dan Informatika</p>
           <h6 class="mb-1 berita_utama_list_item_judul">Dukung Operasi Zebra Seligi 2022, Dishub Tanjungpinang Kerahkan 20 Orang Personilnya</h6>
           <div class="berita_utama_list_item_isi">

@@ -1,4 +1,5 @@
 <template>
+  <h6 class="judulWidget"><Icon name="solar:tag-bold-duotone" /> Kategori Berita</h6>
   <div class="list-group list-group-flush">
     <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
       aria-current="true">

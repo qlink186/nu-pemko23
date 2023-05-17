@@ -1,4 +1,4 @@
-@media (min-width: 1151px) {
+@include media-breakpoint-up(lg) {
   .container {
     max-width: 1150px;
   }
@@ -74,15 +74,19 @@ a {
 }
 
 .judulWidget {
-  font-size: .85rem;
+  font-size: .8rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   // letter-spacing: .1rem;
   color: $warnadefault;
   text-transform: uppercase;
-
+  .icon{
+    font-size: 1.3rem;
+    margin-top: -3px;
+    color: $abumuda2;
+  }
   &:hover {
-    color: $warnasecondary;
+    color: $biru2;
   }
 
   &_tombol {
@@ -91,10 +95,11 @@ a {
     font-weight: 1000;
     font-size: .65rem;
     color: $warnadefault;
-    padding: .1rem .1rem .1rem .4rem;
+    padding: .1rem .4rem;
+    border-radius: .5rem;
     border-width: 2px;
+    background-color: $abumuda4;
     border-color: lighten($color: $warnasecondary, $amount: 30);
-    border-radius: 0;
 
     .icon {
       width: 1.6em;
@@ -110,13 +115,21 @@ a {
   }
 }
 
+
 // ---------- BERITA START ---------- //
 .berita{
+  // ---------- BERITA HOME START ---------- //
   &_home{
     &_list{
+      &.list-group{
+        --bs-list-group-item-padding-y: .75rem;
+      }
       &_item{
-        border-bottom: 1px dashed $abumuda3;
+        border-bottom: 1px dashed $abumuda4;
         font-family: 'Roboto', sans-serif;
+        &:first-child{
+          padding-top: inherit;
+        }
         &_gambar{
           transition: opacity .5s ease-out;
           -moz-transition: opacity .5s ease-out;
@@ -184,9 +197,194 @@ a {
       }
     }
   }
+  // ---------- BERITA HOME END ---------- //
+
+  // ---------- BERITA UTAMA START ---------- //
+  &_utama{
+    &_list{
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1rem;
+      }
+      &_item{
+        @include media-breakpoint-up(lg) {
+          padding: 1rem;
+        }
+        @include media-breakpoint-down(sm) {
+          padding-top: .75rem;
+          padding-bottom: .75rem;
+        }
+        border-radius: .75rem;
+        border-bottom: 1px dashed $abumuda4;
+        &_gambar{
+          min-width: 200px;
+            @include media-breakpoint-down(sm) {
+              min-width: 130px;
+            }
+          img{
+            transition: opacity .5s ease-out;
+            -moz-transition: opacity .5s ease-out;
+            -webkit-transition: opacity .5s ease-out;
+            -o-transition: opacity .5s ease-out;
+          }
+        }
+        &_opd{
+          font-size: .7rem;
+          font-weight: bold;
+          color: $abumuda2;
+          transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -webkit-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+        }
+        &_judul{
+          font-size: .9rem;
+          font-weight: 800;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+                  line-clamp: 2; 
+          -webkit-box-orient: vertical;
+          // line-height: 1.5rem;
+          color: $hitam;
+          @include media-breakpoint-down(sm) {
+            font-size: .8rem;
+          }
+        }
+        &_isi{
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+                  line-clamp: 3; 
+          -webkit-box-orient: vertical;
+          color: $abumuda1;
+          padding-bottom: .5rem;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+        &_meta{
+          @include media-breakpoint-down(sm) {
+            font-size: .65rem;
+          }
+          &_tgl,
+          &_lihat,
+          &_komen,
+          &_kat{
+            background-color: $abumuda4;
+            padding: .25rem .5rem;
+            border-radius: .5rem;
+            transition: all .5s ease-out;
+            -moz-transition: all .5s ease-out;
+            -webkit-transition: all .5s ease-out;
+            -o-transition: all .5s ease-out;
+          }
+          .icon{
+            margin-top: -2px;
+            font-size: .8rem;
+          }
+          &_tgl{
+            @include media-breakpoint-down(sm) {
+              margin-bottom: .3rem;
+              display: block;
+
+            }
+            &_icon{
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+          }
+          &_lihat{
+            &_icon{
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+          }
+          &_komen{
+            &_icon{
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+          }
+          &_kat{
+            // @include media-breakpoint-down(sm) {
+            //   display: none;
+            // }
+            &_icon{
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+          }
+        }
+        &:hover{
+          .berita{
+            &_utama{
+              &_list{
+                &_item{
+                  &_gambar{
+                    img{
+                      opacity: 0.7;
+                    }
+                  }
+                  &_opd{
+                    color: $merah;
+                  }
+                  &_judul{
+                    color: $warnadefault;
+                  }
+                  &_isi{
+                    color: $hitam;
+                  }
+                  &_meta{
+                    &_tgl,
+                    &_lihat,
+                    &_komen,
+                    &_kat{
+                    }
+                    &_tgl{
+                      background-color: lighten($biru,60);
+                      &_icon{
+                        color: $biru;
+                      }
+                    }
+                    &_lihat{
+                      background-color: lighten($hijau,50);
+                      &_icon{
+                        color: $hijau;
+                      }
+                    }
+                    &_komen{
+                      background-color: lighten($biru2,50);
+                      &_icon{
+                        color: $biru2;
+                      }
+                    }
+                    &_kat{
+                      background-color: lighten($oren,35);
+                      &_icon{
+                        color: $oren;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // ---------- BERITA UTAMA END ---------- //
 }
 
-// ---------- BERITA START ---------- //
+// ---------- BERITA END ---------- //
 
 
 // GPR

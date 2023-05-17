@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h6 class="judulWidget"><Icon name="icon-park-twotone:newspaper-folding" /> Berita Terkini
-        <NuxtLink to="/berita" type="button" class="btn btn-sm btn-outline-warning float-end judulWidget_tombol" >Selengkapnya <Icon name="ic:sharp-read-more" /></NuxtLink>
+        <NuxtLink to="/berita" type="button" class="btn btn-sm btn-outline-warning float-end judulWidget_tombol" >Selengkapnya</NuxtLink>
       </h6>
     </div>
   </div>

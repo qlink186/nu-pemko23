@@ -87,6 +87,9 @@ a {
   }
   &:hover {
     color: $biru2;
+    .icon{
+      color: $warnasecondary;
+    }
   }
 
   &_tombol {
@@ -450,9 +453,6 @@ a {
           }
           &_gambar{
             min-width: 45px;
-            // @include media-breakpoint-down(sm) {
-            //   min-width: 130px;
-            // }
             img{
               transition: opacity .5s ease-in-out;
               -moz-transition: opacity .5s ease-in-out;

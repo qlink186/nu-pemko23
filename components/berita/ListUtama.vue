@@ -29,7 +29,7 @@
               <Icon name="ic:twotone-mode-comment" class="berita_utama_list_item_meta_komen_icon" /> 3
             </span>
             <span class="pe-2 berita_utama_list_item_meta_kat">
-              <Icon name="solar:tag-bold-duotone" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
+              <Icon name="icon-park-twotone:tag-one" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
             </span>
           </small>
         </div>
@@ -62,7 +62,7 @@
               <Icon name="ic:twotone-mode-comment" class="berita_utama_list_item_meta_komen_icon" /> 3
             </span>
             <span class="pe-2 berita_utama_list_item_meta_kat">
-              <Icon name="solar:tag-bold-duotone" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
+              <Icon name="icon-park-twotone:tag-one" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
             </span>
           </small>
         </div>
@@ -97,7 +97,7 @@
               <Icon name="ic:twotone-mode-comment" class="berita_utama_list_item_meta_komen_icon" /> 3
             </span>
             <span class="pe-2 berita_utama_list_item_meta_kat">
-              <Icon name="solar:tag-bold-duotone" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
+              <Icon name="icon-park-twotone:tag-one" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
             </span>
           </small>
         </div>
@@ -130,7 +130,7 @@
               <Icon name="ic:twotone-mode-comment" class="berita_utama_list_item_meta_komen_icon" /> 3
             </span>
             <span class="pe-2 berita_utama_list_item_meta_kat">
-              <Icon name="solar:tag-bold-duotone" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
+              <Icon name="icon-park-twotone:tag-one" class="berita_utama_list_item_meta_kat_icon" /> Teknologi
             </span>
           </small>
         </div>

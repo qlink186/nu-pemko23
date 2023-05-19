@@ -209,6 +209,10 @@ a {
         margin-bottom: 1rem;
       }
       &_item{
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
         @include media-breakpoint-up(lg) {
           padding: 1rem;
         }
@@ -327,6 +331,9 @@ a {
           }
         }
         &:hover{
+          box-shadow: 0 0 30px 0px $abumuda3;
+          -webkit-box-shadow: 0 0 30px 0px $abumuda3;
+          -moz-box-shadow: 0 0 30px 0px $abumuda3;
           .berita{
             &_utama{
               &_list{
@@ -385,6 +392,167 @@ a {
     }
   }
   // ---------- BERITA UTAMA END ---------- //
+  // ---------- BERITA DETAIL START ---------- //
+  &_detail{
+    &_judul{
+    }
+    &_meta{
+      &_atas{
+        &_opd,
+        &_tgl{
+          font-size: .7rem;
+          color: $abumuda2;
+          padding-right: 1rem;
+          .icon{
+            font-size: .8rem;
+            margin-top: -3px;
+            transition: all .5s ease-out;
+            -moz-transition: all .5s ease-out;
+            -webkit-transition: all .5s ease-out;
+            -o-transition: all .5s ease-out;
+          }
+        }
+        &_opd{
+          .icon{
+            color: $pink;
+          }
+        }
+        &_tgl{
+          .icon{
+            color: $hijau;
+          }
+        }
+      }
+      &_bawah{
+        border-top: 1px solid $abumuda3;
+        border-bottom: 1px solid $abumuda3;
+        background-color: $abumuda4;
+        padding-top: .3rem;
+        padding-bottom: .3rem;
+        .list-group{
+          --bs-list-group-item-padding-y:0;
+          .list-group-item{
+            border-top: none;
+            border-bottom: none;
+            background-color: $abumuda4;
+            &:first-child{
+              border-left: none;
+            }
+            &:last-child{
+              border-right: none;
+            }
+          }
+        }
+        &_penulis,
+        &_kat,
+        &_komen,
+        &_lihat,
+        &_tag{
+          font-size: .7rem;
+          color: $abumuda2;
+          .icon{
+            font-size: .8rem;
+            margin-top: -3px;
+            transition: all .5s ease-out;
+            -moz-transition: all .5s ease-out;
+            -webkit-transition: all .5s ease-out;
+            -o-transition: all .5s ease-out;
+          }
+        }
+        &_penulis{
+          .icon{
+            color: lighten($merah,30);
+          }
+        }
+        &_kat{
+          .icon{
+            color: darken($oren,10);
+          }
+        }
+        &_komen{
+          .icon{
+            color: lighten($biru,40);
+          }
+        }
+        &_lihat{
+          .icon{
+            color: lighten($hijau,40);
+          }
+        }
+        &_tag{
+          .icon{
+            color: lighten($pink, 20);
+          }
+        }
+        &:hover{
+          .berita{
+            &_detail{
+              &_meta{
+                &_bawah{
+                  &_penulis,
+                  &_kat,
+                  &_komen,
+                  &_lihat,
+                  &_tag{
+                    color: $abumuda1;
+                  }
+                  &_penulis{
+                    .icon{
+                      color: $merah;
+                    }
+                  }
+                  &_kat{
+                    .icon{
+                      color: $oren;
+                    }
+                  }
+                  &_komen{
+                    .icon{
+                      color: $biru;
+                    }
+                  }
+                  &_lihat{
+                    .icon{
+                      color: $hijau;
+                    }
+                  }
+                  &_tag{
+                    .icon{
+                      color: $pink;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &_gambar{
+      img{
+        width: 100%;
+        object-fit:cover;
+      }
+    }
+    &_isi{
+      strong{
+        color: $warnadefault;
+      }
+      a{
+        color: $hijau;
+        font-weight: 800;
+        text-decoration: none;
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        &:hover{
+          color: $pink;
+        }
+      }
+    }
+  }
+  // ---------- BERITA DETAIL END ---------- //
 }
 
 // ---------- BERITA END ---------- //
@@ -540,6 +708,63 @@ a {
   }
 }
 // ---------- SIDEBAR END ---------- //
+
+
+// ---------- GALLERY START ---------- //
+.gallery{
+  text-decoration: none;
+  color: $abumuda1;
+  // ---------- GALLERY LIST START ---------- //
+  &_list{
+    border-color: $abumuda3;
+    transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    &_gambar{
+      height: 7rem;
+      object-fit: cover;
+    }
+    &_konten{
+      padding: .6rem;
+      &_judul{
+        font-size: .7rem;
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+      }
+      &_deskripsi{
+        color: $abumuda1;
+        font-size: .7rem;
+      }
+    }
+    &:hover{
+      background-color: $abumuda4;
+      // border-color: $abumuda2;
+      box-shadow: 0 0 30px 0px $abumuda2;
+      -webkit-box-shadow: 0 0 30px 0px $abumuda2;
+      -moz-box-shadow: 0 0 30px 0px $abumuda2;
+      .gallery{
+        &_list{
+          &_gambar{
+
+          }
+          &_konten{
+            &_judul{
+              color: $warnadefault;
+            }
+            &_deskripsi{
+
+            }
+          }
+        }
+      }
+    }
+  }
+  // ---------- GALLERY LIST END ---------- //
+}
+// ---------- GALLERY END ---------- //
 
 // GPR
 #gpr-kominfo-widget-container {

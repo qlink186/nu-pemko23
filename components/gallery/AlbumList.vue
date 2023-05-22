@@ -1,7 +1,7 @@
 <template>
-  <div class="row mb-4">
+  <div class="row mb-4 containerm">
     <div class="col-lg-3 col-sm-6 pb-4">
-      <NuxtLink to="/gallery" class="album">
+      <NuxtLink to="/gallery/1" class="album">
         <div class="card album_list">
           <img src="https://picsum.photos/id/33/300/200" class="card-img-top img-fluid album_list_gambar" alt="...">
           <div class="card-body album_list_konten">
@@ -17,7 +17,7 @@
       </NuxtLink>
     </div>
     <div class="col-lg-3 col-sm-6 pb-4">
-      <NuxtLink to="/gallery" class="album">
+      <NuxtLink to="/gallery/2" class="album">
         <div class="card album_list">
           <img src="https://picsum.photos/id/33/300/200" class="card-img-top img-fluid album_list_gambar" alt="...">
           <div class="card-body album_list_konten">
@@ -33,7 +33,7 @@
       </NuxtLink>
     </div>
     <div class="col-lg-3 col-sm-6 pb-4">
-      <NuxtLink to="/gallery" class="album">
+      <NuxtLink to="/gallery/3" class="album">
         <div class="card album_list">
           <img src="https://picsum.photos/id/33/300/200" class="card-img-top img-fluid album_list_gambar" alt="...">
           <div class="card-body album_list_konten">
@@ -85,6 +85,7 @@ $warnadefault: $biru;
 $warnasecondary: $oren;
 
 // ---------- ALBUM START ---------- //
+
 .album{
   text-decoration: none;
   color: $abumuda1;

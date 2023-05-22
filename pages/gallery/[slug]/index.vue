@@ -2,7 +2,7 @@
 
   //meta title
   useHead({
-    title: 'Gallery | Pemerintah Kota Tanjungpinang',
+    title: 'Gallery Detail | Pemerintah Kota Tanjungpinang',
   });
     
 </script>
@@ -10,11 +10,11 @@
   <div class="container-fluid">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 order-lg-1">
-          <FormAlbumCari />
+        <div class="col-lg-3">
+          <SidebarGalleryAlbumDetail />
         </div>
-        <div class="col-lg-12 order-lg-3">
-          <Gallery />
+        <div class="col-md-9">
+          <GalleryAlbumDetail />
         </div>
       </div>
     </div>

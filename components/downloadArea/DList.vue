@@ -21,9 +21,9 @@
         <button class="btn btn-primary btn-sm" type="button">
           <Icon name="line-md:download-loop" />
         </button>
-        <button class="btn btn-warning btn-sm" type="button">
+        <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
           <Icon name="ph:magnifying-glass-plus-bold"/>
-        </button>
+        </NuxtLink>
       </div>
     </li>
     <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_item">
@@ -45,9 +45,9 @@
         <button class="btn btn-primary btn-sm" type="button">
           <Icon name="line-md:download-loop" />
         </button>
-        <button class="btn btn-warning btn-sm" type="button">
+        <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
           <Icon name="ph:magnifying-glass-plus-bold"/>
-        </button>
+        </NuxtLink>
       </div>
     </li>
     <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_item">
@@ -71,9 +71,9 @@
         <button class="btn btn-primary btn-sm" type="button">
           <Icon name="line-md:download-loop" />
         </button>
-        <button class="btn btn-warning btn-sm" type="button">
+        <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
           <Icon name="ph:magnifying-glass-plus-bold"/>
-        </button>
+        </NuxtLink>
       </div>
     </li>
   </ul>

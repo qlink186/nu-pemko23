@@ -10,6 +10,7 @@
 <template>
   <div class="container-fluid">
     <div class="container">
+      <Breadcrumb />
       <div class="row">
         <div class="col-lg-3">
           <FormAlbumCari />

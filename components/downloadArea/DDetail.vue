@@ -44,18 +44,16 @@ $warnadefault: $biru;
 $warnasecondary: $oren;
 
 .btnicon{
-  padding: 0 .7rem 0 0;
+  // padding: 0 .7rem 0 0;
   font-size: .75rem;
   font-weight: bold;
   letter-spacing: .2rem;
   &-down{
     font-size: 1.2rem;
-    background-color: darken($warnadefault,10);
-    margin-right: .7rem;
+    margin-right: .5rem;
   }
   &:hover{
     .btnicon-down{
-      background-color: darken($warnadefault,20);
     }
   }
 }

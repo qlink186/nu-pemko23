@@ -710,6 +710,134 @@ a {
 // ---------- SIDEBAR END ---------- //
 
 
+
+// ---------- ALBUM GALLERY START ---------- //
+
+.album{
+  text-decoration: none;
+  color: $abumuda1;
+  // ---------- ALBUM GALLERY LIST START ---------- //
+  &_list{
+    border-color: $abumuda3;
+    transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    &_gambar{
+      max-height: 10rem;
+      object-fit: cover;
+      @include media-breakpoint-down(sm) {
+        max-height: inherit;
+      }
+    }
+    &_konten{
+      padding: .6rem;
+      &_opd{
+        color: $merah;
+        font-size: .7rem;
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+      }
+      &_judul{
+        font-size: .75rem;
+        font-weight: 800;
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+      }
+      &_deskripsi{
+        color: $abumuda2;
+        font-size: .7rem;
+        font-weight: inherit;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
+      }
+      &_meta{
+        &_tgl{
+          font-size: .65rem;
+          color: $abumuda3;
+          transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -webkit-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+          .icon{
+            transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -webkit-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+          }
+        }
+        &_jumgal{
+          background-color: lighten($hijau,50);
+          color: $abumuda1;
+          font-size: .7rem;
+          transition: all .5s ease-out;
+          -moz-transition: all .5s ease-out;
+          -webkit-transition: all .5s ease-out;
+          -o-transition: all .5s ease-out;
+          .icon{
+            color: $hijau;
+            margin-top: -2px;
+            font-size: .8rem;
+            transition: all .5s ease-out;
+            -moz-transition: all .5s ease-out;
+            -webkit-transition: all .5s ease-out;
+            -o-transition: all .5s ease-out;
+          }
+        }
+      }
+    }
+    &:hover{
+      background-color: $abumuda4;
+      // border-color: $abumuda2;
+      box-shadow: 0 0 30px 0px $abumuda2;
+      -webkit-box-shadow: 0 0 30px 0px $abumuda2;
+      -moz-box-shadow: 0 0 30px 0px $abumuda2;
+      .album{
+        &_list{
+          &_gambar{
+
+          }
+          &_konten{
+            &_opd{
+              color: $hijau;
+            }
+            &_judul{
+              color: $warnadefault;
+            }
+            &_deskripsi{
+              color: $abumuda1;
+            }
+            &_meta{
+              &_tgl{
+                color: $pink;
+                .icon{
+                  color: $pink;
+                }
+              }
+              &_jumgal{
+                background-color: $hijau;
+                color: white;
+                .icon{
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  // ---------- ALBUM GALLERY LIST END ---------- //
+
+
 // ---------- GALLERY START ---------- //
 .gallery{
   text-decoration: none;
@@ -722,8 +850,11 @@ a {
     -webkit-transition: all .5s ease-out;
     -o-transition: all .5s ease-out;
     &_gambar{
-      height: 7rem;
+      height: 8rem;
       object-fit: cover;
+      @include media-breakpoint-down(sm) {
+        height: inherit;
+      }
     }
     &_konten{
       padding: .6rem;

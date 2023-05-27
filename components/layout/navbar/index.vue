@@ -11,11 +11,27 @@
           <li class="nav-item">
             <NuxtLink class="nav-link" aria-current="page" to="/"><Icon name="ph:house" /> Beranda</NuxtLink>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="profil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Icon name="icomoon-free:folder" /> Profil
+            </a>
+            <ul class="dropdown-menu">
+              <li><NuxtLink class="dropdown-item" to="/profil/selayang-pandang">Selayang Pandang</NuxtLink></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/berita"><Icon name="fa:newspaper-o" /> Berita</NuxtLink>
           </li>
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/gallery"><Icon name="fa:camera" /> Gallery</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/pengumuman"><Icon name="ic:twotone-fiber-new" /> Pengumuman</NuxtLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

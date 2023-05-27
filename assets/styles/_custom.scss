@@ -535,6 +535,35 @@ a {
       }
     }
     &_isi{
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6{
+        font-weight: 800;
+        font-family: 'Montserrat', sans-serif;
+        color: $hijau;
+      }
+      h1{
+        font-size: .9rem;
+      }
+      h2{
+        font-size: .85rem;
+      }
+      h3{
+        font-size: .8rem;
+      }
+      h4{
+        font-size: .75rem;
+      }
+      h5{
+        font-size: .7rem;
+      }
+      h6{
+        font-size: .65rem;
+      }
+      text-align: justify;
       strong{
         color: $warnadefault;
       }

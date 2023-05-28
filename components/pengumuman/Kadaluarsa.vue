@@ -4,8 +4,7 @@
   <ul class="list-group lst_down">
     <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_item">
       <div class="me-auto d-flex align-items-center lst_down_item_desk">
-        <div class="lst_down_item_desk_icon"><img src="https://picsum.photos/id/24/400/500" class="img-fluid rounded mx-auto d-block"
-            alt="format"></div>
+        <div class="lst_down_item_desk_icon"><img src="https://picsum.photos/id/24/400/500" class="img-fluid rounded mx-auto d-block" alt="format"></div>
         <div class="lst_down_item_desk_konten ps-3">
           <div class="pe-3 lst_down_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />Pemerintah Kota Tanjungpinang</div>
           <div class="lst_down_item_desk_konten_judul">Pengumuman Kelulusan Seleksi Administrasi Pemilihan Calon Anggota Badan Penyelesaian Sengketa Konsumen (BPSK) Kota Tanjungpinang Periode Tahun 2023 - 2028</div>

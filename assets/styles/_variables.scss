@@ -4,9 +4,11 @@ $abumuda1:  lighten($hitam, 15);
 $abumuda2:  lighten($hitam, 40);
 $abumuda3:  lighten($hitam, 70);
 $abumuda4:  lighten($hitam, 80);
-$biru:    rgb(44,44,100);
+// $biru:    rgb(31, 70, 144);
+$biru:    rgb(31, 70, 144);
 $biru2:   rgb(23, 70, 162);
-$oren:    rgb(243,171,28);
+// $oren:    rgb(243,171,28);
+$oren:    rgb(255, 178, 0);
 $hijau:   rgb(27, 156, 133);
 $merah:   rgb(194, 16, 16);
 $pink:    rgb(154, 22, 99);
@@ -25,9 +27,9 @@ $warnasecondary: $oren;
 
 
 .btn-primary{
-  --bs-btn-bg: rgb(44,44,100);
-  --bs-btn-border-color:rgb(44,44,100);
-  --bs-btn-disabled-bg:rgb(44,44,100);
+  --bs-btn-bg: rgb(31, 70, 144);
+  --bs-btn-border-color:rgb(31, 70, 144);
+  --bs-btn-disabled-bg:rgb(31, 70, 144);
   --bs-btn-hover-bg: rgb(33, 33, 82);
   --bs-btn-hover-border-color:rgb(26, 26, 70);
   --bs-btn-active-bg:rgb(26, 26, 70);
@@ -36,9 +38,9 @@ $warnasecondary: $oren;
 }
 
 .btn-outline-primary{
-  --bs-btn-color: rgb(44,44,100);
-  --bs-btn-border-color:rgb(44,44,100);
-  --bs-btn-disabled-color:rgb(44,44,100);
+  --bs-btn-color: rgb(31, 70, 144);
+  --bs-btn-border-color:rgb(31, 70, 144);
+  --bs-btn-disabled-color:rgb(31, 70, 144);
   --bs-btn-hover-bg: rgb(33, 33, 82);
   --bs-btn-hover-border-color:rgb(26, 26, 70);
   --bs-btn-active-bg:rgb(26, 26, 70);

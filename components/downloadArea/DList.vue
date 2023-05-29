@@ -80,18 +80,20 @@
 </template>
 
 <style lang="scss" scoped>
-$hitam: rgb(39, 41, 42);
-$hitam2: rgb(27, 28, 29);
-$abumuda1: lighten($hitam, 15);
-$abumuda2: lighten($hitam, 40);
-$abumuda3: lighten($hitam, 70);
-$abumuda4: lighten($hitam, 80);
-$biru: rgb(44, 44, 100);
-$biru2: rgb(23, 70, 162);
-$oren: rgb(243, 171, 28);
-$hijau: rgb(27, 156, 133);
-$merah: rgb(194, 16, 16);
-$pink: rgb(154, 22, 99);
+$hitam:   rgb(39, 41, 42);
+$hitam2:  rgb(27, 28, 29);
+$abumuda1:  lighten($hitam, 15);
+$abumuda2:  lighten($hitam, 40);
+$abumuda3:  lighten($hitam, 70);
+$abumuda4:  lighten($hitam, 80);
+// $biru:    rgb(31, 70, 144);
+$biru:    rgb(31, 70, 144);
+$biru2:   rgb(23, 70, 162);
+// $oren:    rgb(243,171,28);
+$oren:    rgb(255, 178, 0);
+$hijau:   rgb(27, 156, 133);
+$merah:   rgb(194, 16, 16);
+$pink:    rgb(154, 22, 99);
 $warnadefault: $biru;
 $warnasecondary: $oren;
 

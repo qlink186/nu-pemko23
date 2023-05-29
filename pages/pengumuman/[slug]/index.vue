@@ -8,16 +8,12 @@
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 order-lg-2">
-          <PengumumanDetail />
-        </div>
-        <div class="col-lg-3 order-lg-1">
-          <SidebarBeritaPopuler />
-        </div>
-      </div>
-    </div>
-  </div>
+  <NuxtLayout name="sidebarrtl">
+    <template #sdbar>
+      <SidebarGalleryAlbumDetail />
+    </template>
+    <template #konten>
+      <PengumumanDetail />
+    </template>
+  </NuxtLayout>
 </template>

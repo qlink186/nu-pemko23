@@ -6,17 +6,14 @@
   });
     
 </script>
+
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <SidebarGalleryAlbumDetail />
-        </div>
-        <div class="col-md-9">
-          <GalleryAlbumDetail />
-        </div>
-      </div>
-    </div>
-  </div>
+  <NuxtLayout name="sidebarrtl">
+    <template #sdbar>
+      <SidebarGalleryAlbumDetail />
+    </template>
+    <template #konten>
+      <GalleryAlbumDetail />
+    </template>
+  </NuxtLayout>
 </template>

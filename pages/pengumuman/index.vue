@@ -7,16 +7,6 @@
     
 </script>
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <FormAlbumCari />
-        </div>
-        <div class="col-lg-12">
-          <Pengumuman />
-        </div>
-      </div>
-    </div>
-  </div>
+  <FormAlbumCari />
+  <Pengumuman />
 </template>

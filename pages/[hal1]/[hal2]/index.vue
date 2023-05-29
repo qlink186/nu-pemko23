@@ -8,10 +8,5 @@
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <Breadcrumb />
-      <Halaman />
-    </div>
-  </div>
+  <Halaman />
 </template>

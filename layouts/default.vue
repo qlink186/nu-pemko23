@@ -1,14 +1,9 @@
 <template>
-  <div>
+  <div class="container">
     <LayoutAtasDefault />
     <LayoutNavbar />
-
-    <!--- render page -->
+    <Breadcrumb />
     <slot />
-    <div class="footer">
-      <LayoutFooterAtas />
-      <LayoutFooterBawah />
-    </div>
-
   </div>
+  <LayoutFooter />
 </template>

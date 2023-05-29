@@ -8,10 +8,10 @@ export default defineNuxtConfig({
         { src: "https://widget.kominfo.go.id/gpr-widget-kominfo.min.js", type:"text/javascript"},
       ],
     },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in' // default
-    }
+    // pageTransition: {
+    //   name: 'page',
+    //   mode: 'out-in' // default
+    // }
   },
   css: [
     '~/assets/styles/main.scss'

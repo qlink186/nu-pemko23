@@ -1,25 +1,23 @@
 <script setup lang="ts">
-
-  //meta title
-  useHead({
+  useSeoMeta({
     title: 'Download Area | Pemerintah Kota Tanjungpinang',
-  });
-    
+    ogTitle: 'Download Area | Pemerintah Kota Tanjungpinang',
+    description: 'Berkas Arsip Digital Pemerintah Kota Tanjungpinang',
+    ogDescription: 'Berkas Arsip Digital Pemerintah Kota Tanjungpinang',
+    ogImage: 'https://example.com/image.png',
+    twitterCard: 'summary_large_image',
+  })
 </script>
-
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <Breadcrumb />
-      <div class="row">
-        <div class="col-lg-3">
-          <FormAlbumCari />
-        </div>
-        <div class="col-lg-9">
-          <DownloadAreaDList class="d-none d-md-block" />
-          <DownloadAreaMList class="d-block d-md-none" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <NuxtLayout name="sidebar">
+    <template #sdbar>
+      <SidebarBeritaKategori />
+      <SidebarBeritaPopuler />
+    </template>
+    <template #konten>
+      <DownloadAreaDList class="d-none d-md-block" />
+      <DownloadAreaMList class="d-block d-md-none" />
+    </template>
+  </NuxtLayout>
 </template>
+

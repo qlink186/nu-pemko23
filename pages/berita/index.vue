@@ -1,27 +1,22 @@
 <script setup lang="ts">
-
-  //meta title
-  useHead({
-    title: 'Berita | Pemerintah Kota Tanjungpinang',
-  });
-    
+  useSeoMeta({
+    title: 'Berita',
+    ogTitle: 'Berita | Pemerintah Kota Tanjungpinang',
+    // description: 'This is my amazing site, let me tell you all about it.',
+    // ogDescription: 'This is my amazing site, let me tell you all about it.',
+    ogImage: 'https://example.com/image.png',
+    twitterCard: 'summary_large_image',
+  })
 </script>
 
 <template>
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 order-md-1">
-          <FormBeritaCari />
-        </div>
-        <div class="col-md-9 order-md-3">
-          <Berita />
-        </div>
-        <div class="col-md-3 order-md-2">
-          <SidebarBeritaKategori />
-          <SidebarBeritaPopuler />
-        </div>
-      </div>
-    </div>
-  </div>
+  <NuxtLayout name="sidebarrtl">
+  <template #sdbar>
+    <SidebarBeritaKategori />
+    <SidebarBeritaPopuler />
+  </template>
+  <template #konten>
+    <Berita />
+  </template>
+</NuxtLayout>
 </template>

@@ -1,5 +1,3 @@
 <template>
-  <div class="container border ">
-    <h3>Atas Default</h3>
-  </div>
+  <h3 class="border">Atas Default</h3>
 </template>

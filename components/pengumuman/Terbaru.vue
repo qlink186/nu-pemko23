@@ -35,7 +35,7 @@
               <img src="https://picsum.photos/id/27/300/400" class="card-img rounded mx-auto d-block" alt="format" />
             </div>
             <div class="col-lg-8 align-middle">
-              <h6 class="card-title">Pengumuman Kelulusan Seleksi Administrasi Pemilihan Calon Anggota Badan Penyelesaian Sengketa Konsumen (BPSK) Kota Tanjungpinang Periode Tahun 2023 - 2028</h6>
+              <h6 class="card-title">PEMILIHAN CALON ANGGOTA BADAN PENYELESAIAN SENGKETA KONSUMEN (BPSK) KOTA TANJUNGPINANG PERIODE 2023 - 2029</h6>
               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <div>
                 <span class="txticon pe-3"><Icon name="solar:hashtag-bold-duotone" class="pe-1" />555.16/0123/5.16.03/2022</span>
@@ -117,25 +117,6 @@ $warnasecondary: $oren;
   &-text{
     color: $abumuda1;
     text-align: justify;
-  }
-}
-
-.btnicon{
-  font-size: .75rem;
-  .icon{
-    font-size: 1rem;
-    margin-top: -2px;
-    margin-right: .25rem;
-  }
-}
-
-.txticon{
-  font-size: .7rem;
-  color: $abumuda1;
-  .icon{
-    font-size: .9rem;
-    margin-top: -2px;
-    margin-right: .15rem;
   }
 }
 

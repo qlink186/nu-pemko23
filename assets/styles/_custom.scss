@@ -926,20 +926,55 @@ a {
 }
 // ---------- GALLERY END ---------- //
 
+
+// ---------- BUTTON ICON START ---------- //
+.btnicon{
+  font-size: .75rem;
+  .icon{
+    font-size: 1rem;
+    margin-top: -2px;
+    margin-right: .25rem;
+  }
+}
+// ---------- BUTTON ICON END ---------- //
+
+// ---------- TEXT ICON START ---------- //
+.txticon{
+  font-size: .7rem;
+  color: $abumuda1;
+  .icon{
+    font-size: .9rem;
+    margin-top: -2px;
+    margin-right: .15rem;
+  }
+}
+// ---------- TEXT ICON END ---------- //
+
+
 // GPR
 #gpr-kominfo-widget-container {
   #gpr-kominfo-widget-header {
     height: 50px !important;
+    @include media-breakpoint-down(sm) {
+      height: 70px !important ;
+    }
   }
 
   #gpr-kominfo-widget-body {
     #gpr-kominfo-widget-list {
+      max-height: 270px;
+      @include media-breakpoint-down(sm) {
+        max-height: inherit;
+      }
       li {
         &.gpr-kominfo-widget-list-item {
           font-size: 12px !important;
 
           &.gpr-kominfo-widget-icon-rilis-media-gpr {
             background-size: 50px !important;
+            @include media-breakpoint-down(sm) {
+              background-size: inherit;
+            }
           }
         }
       }

@@ -7,6 +7,7 @@
     ogImage: 'https://example.com/image.png',
     twitterCard: 'summary_large_image',
   })
+  // const { isMobile } = device();
 </script>
 <template>
   <NuxtLayout name="sidebar">
@@ -15,8 +16,12 @@
       <SidebarBeritaPopuler />
     </template>
     <template #konten>
-      <DownloadAreaDList class="d-none d-md-block" />
-      <DownloadAreaMList class="d-block d-md-none" />
+      <div v-if="$device.isMobile">
+        <DownloadAreaMList />
+      </div>
+      <div v-else>
+        <DownloadAreaDList />
+      </div>
     </template>
   </NuxtLayout>
 </template>

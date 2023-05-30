@@ -3,6 +3,7 @@
     <LayoutAtasWelcome />
     <LayoutNavbar />
     <CarouselBeranda />
+    <LayoutNavbarBawah />
     <slot />
   </div>
   <div class="container-fluid bgAbu">

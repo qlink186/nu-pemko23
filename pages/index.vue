@@ -13,8 +13,8 @@
   definePageMeta({
     layout: "beranda",
   });
-    
 </script>
+
 
 <template>
   <div class="row">

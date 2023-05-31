@@ -1,4 +1,5 @@
 <template>
+  
   <div class="list-group list-group-flush berita_utama_list">
     <NuxtLink to="/berita/1" class="list-group-item list-group-item-action berita_utama_list_item">
       <div class="d-flex w-100 justify-content-between">

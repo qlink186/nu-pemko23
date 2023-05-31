@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  
   app: {
     head: {
       charset: 'utf-8',
@@ -22,6 +23,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-icon',
     '@nuxtjs/device',
+    'nuxt-swiper',
   ],
   googleFonts: {
     families: {
@@ -35,5 +37,13 @@ export default defineNuxtConfig({
         ital: [100]
       },
     }
-  }
+  },
+  runtimeConfig: {
+    apiSecret: '', // can be overridden by NUXT_API_SECRET environment variable
+    public: {
+      baseUrl: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+      dashboardUrl: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+      apiUrl: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+    }
+  },
 })

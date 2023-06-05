@@ -453,6 +453,10 @@ a {
         &_tag{
           font-size: .7rem;
           color: $abumuda2;
+          a{
+            color: $abumuda2;
+            text-decoration: none;
+          }
           .icon{
             font-size: .8rem;
             margin-top: -3px;
@@ -505,6 +509,9 @@ a {
                     }
                   }
                   &_kat{
+                    a{
+                      color: darken($oren,10);
+                    }
                     .icon{
                       color: $oren;
                     }
@@ -702,12 +709,16 @@ a {
           }
           &_gambar{
             min-width: 45px;
+            width: 45px;
+            height: 45px;
             img{
               transition: opacity .5s ease-in-out;
               -moz-transition: opacity .5s ease-in-out;
               -webkit-transition: opacity .5s ease-in-out;
               -o-transition: opacity .5s ease-in-out;
-              width: 45px;
+              // width: 45px;
+              object-fit: cover;
+              height: 100%;
             }
           }
           &_judul{

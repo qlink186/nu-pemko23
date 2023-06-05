@@ -6,68 +6,39 @@
       </div>
       <div class="card-body p-2">
         <div class="list-group list-group-flush sb_berita_pop_list">
-          <NuxtLink to="/berita/1" class="list-group-item list-group-item-action sb_berita_pop_list_item">
-            <div class="d-flex w-100 justify-content-between">
-              <div class="sb_berita_pop_list_item_gambar">
-                <img
-                  src="https://picsum.photos/id/38/130/130"
-                  class="img-fluid rounded"
-                  alt="berita2"
-                />
-              </div>
-              <div class="ps-2 me-auto">
-                <h6 class="mb-1 sb_berita_pop_list_item_judul">Evaluasi Smart City 2022, Wako Rahma : Enam Quic Wins Upaya Pemko Berikan Layanan Terbaik</h6>
-                <small class="sb_berita_pop_list_item_meta">
-                  <span class="pe-2 sb_berita_pop_list_item_meta_lihat me-2">
-                    <Icon name="ic:twotone-remove-red-eye" class="sb_berita_pop_list_item_meta_lihat_icon" /> 3
-                  </span>
-                </small>
-              </div>
-              <div class="sb_berita_pop_list_item_rank">#1</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/berita/1" class="list-group-item list-group-item-action sb_berita_pop_list_item">
-            <div class="d-flex w-100 justify-content-between">
-              <div class="sb_berita_pop_list_item_gambar">
-                <img
-                  src="https://picsum.photos/id/54/130/130"
-                  class="img-fluid rounded"
-                  alt="berita2"
-                />
-              </div>
-              <div class="ps-2 me-auto">
-                <h6 class="mb-1 sb_berita_pop_list_item_judul">Evaluasi Smart City 2022, Wako Rahma : Enam Quic Wins Upaya Pemko Berikan Layanan Terbaik</h6>
-                <small class="sb_berita_pop_list_item_meta">
-                  <span class="pe-2 sb_berita_pop_list_item_meta_lihat me-2">
-                    <Icon name="ic:twotone-remove-red-eye" class="sb_berita_pop_list_item_meta_lihat_icon" /> 3
-                  </span>
-                </small>
-              </div>
-              <div class="sb_berita_pop_list_item_rank">#2</div>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/berita/1" class="list-group-item list-group-item-action sb_berita_pop_list_item">
-            <div class="d-flex w-100 justify-content-between">
-              <div class="sb_berita_pop_list_item_gambar">
-                <img
-                  src="https://picsum.photos/id/26/130/130"
-                  class="img-fluid rounded"
-                  alt="berita2"
-                />
-              </div>
-              <div class="ps-2 me-auto">
-                <h6 class="mb-1 sb_berita_pop_list_item_judul">Evaluasi Smart City 2022 City 2022</h6>
-                <small class="sb_berita_pop_list_item_meta">
-                  <span class="pe-2 sb_berita_pop_list_item_meta_lihat me-2">
-                    <Icon name="ic:twotone-remove-red-eye" class="sb_berita_pop_list_item_meta_lihat_icon" /> 3
-                  </span>
-                </small>
-              </div>
-              <div class="sb_berita_pop_list_item_rank">#3</div>
-            </div>
-          </NuxtLink>
+          <template v-for="(brpop, index) in beritapop" :key="brpop.id">
+            <template v-if="brpop.jum_klik">
+              <NuxtLink :to="`/berita/`+brpop.guid_baru" class="list-group-item list-group-item-action sb_berita_pop_list_item">
+                <div class="d-flex w-100 justify-content-between">
+                  <div class="sb_berita_pop_list_item_gambar">
+                    <img
+                      :src="config.public['dashboardUrl']+`/images/berita/thumb/`+brpop.post_gambar"
+                      class="img-fluid rounded"
+                      :alt="brpop.judul_post"
+                    />
+                  </div>
+                  <div class="ps-2 me-auto">
+                    <h6 class="mb-1 sb_berita_pop_list_item_judul">{{ brpop.judul_post }}</h6>
+                    
+                      <small class="sb_berita_pop_list_item_meta">
+                        <span class="pe-2 sb_berita_pop_list_item_meta_lihat me-2">
+                          <Icon name="ic:twotone-remove-red-eye" class="sb_berita_pop_list_item_meta_lihat_icon" /> {{ brpop.jum_klik }}
+                        </span>
+                      </small>
+                  </div>
+                  <div class="sb_berita_pop_list_item_rank">#{{ index+1 }}</div>
+                </div>
+              </NuxtLink>
+            </template>
+          </template>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+  const config = useRuntimeConfig()
+
+  const { pending, data: beritapop } = await useLazyAsyncData('beritapop', () => $fetch(config.public['apiUrl']+`berita-populer`))
+</script>

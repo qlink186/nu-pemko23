@@ -4,18 +4,20 @@
   </div>
   <div v-else>
     <ul class="list-group lst_down_ds">
-      <template v-for="(dwn, index) in dtdown" :key="dwn.id">
+      <template v-for="(dwn, index) in dtdown.downloadarea" :key="dwn.id">
         <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_ds_item">
           <div class="me-auto d-flex align-items-center lst_down_ds_item_desk">
             <div class="lst_down_ds_item_desk_icon">
-              <img :src="`~/assets/img/icon/format/`+dwn.format_file+`.svg`" type="image/svg+xml" class="img-fluid mx-auto d-block" alt="format">
+              <nuxt-img :src="`/icon/format/`+dwn.format_file+`.svg`" type="image/svg+xml" class="img-fluid mx-auto d-block" alt="format" />
             </div>
             <div class="lst_down_ds_item_desk_konten ps-2">
+              <div class="lst_down_ds_item_desk_konten_meta">
+                <span class="pe-3 lst_down_ds_item_desk_konten_meta_opd">{{ dwn.nunker }}</span>
+              </div>
               <div class="lst_down_ds_item_desk_konten_judul">{{ dwn.nama_file }}</div>
               <div class="lst_down_ds_item_desk_konten_desk" v-if="dwn.deskripsi_file">{{ dwn.deskripsi_file }}</div>
               <div class="lst_down_ds_item_desk_konten_meta">
-                <span class="pe-3 lst_down_ds_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />{{ dwn.nunker }}</span>
-                <span class="pe-3 lst_down_ds_item_desk_konten_meta_jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />{{ dwn.jenis_file }}</span>
+                <span class="pe-3 lst_down_ds_item_desk_konten_meta_jnsdok" v-if="dwn.jenis_file"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />{{ dwn.jenis_file }}</span>
                 <span class="pe-3 lst_down_ds_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />{{ dwn.kategori_dip }}</span>
               </div>
             </div>
@@ -25,7 +27,7 @@
             <button class="btn btn-primary btn-sm" type="button">
               <Icon name="line-md:download-loop" />
             </button>
-            <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
+            <NuxtLink class="btn btn-warning btn-sm" type="button" :to="`/data/download-area/`+dwn.id">
               <Icon name="ph:magnifying-glass-plus-bold"/>
             </NuxtLink>
           </div>

@@ -24,7 +24,13 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxtjs/device',
     'nuxt-swiper',
+    '@nuxt/image-edge',
   ],
+
+  image: {
+    dir: 'assets/img',
+  },
+
   googleFonts: {
     families: {
       Roboto: true,

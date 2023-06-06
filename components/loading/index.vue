@@ -1,3 +1,3 @@
 <template>
-  <div style="background: red; min-width: 200px; height: auto; display: block;">tes</div>
+  <div style="height: auto; display: block;">Menampilkan <Icon name="line-md:loading-alt-loop" style="font-size: 1.1rem;"></Icon> </div>
 </template>

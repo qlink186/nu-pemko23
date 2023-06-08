@@ -5,6 +5,9 @@
         <h6 class="judulWidget mb-0"><Icon name="solar:stars-bold-duotone" /> Berita Populer</h6>
       </div>
       <div class="card-body p-2">
+        <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
+          <Loading />
+        </div>
         <div class="list-group list-group-flush sb_berita_pop_list">
           <template v-for="(brpop, index) in beritapop" :key="brpop.id">
             <template v-if="brpop.jum_klik">

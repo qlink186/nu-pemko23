@@ -8,6 +8,69 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgba(0,0,0,.4) 50%, rgba(0,0,0,.5) 50%);
+  background-size: 2px 2px;
+  z-index: 0;
+}
+
+video{
+  position: absolute;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  // min-width: 100%;
+  // min-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
+.video-background {
+  background: #000;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background {
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    contain: content;
+    pointer-events: none;
+  }
+  lite-youtube {
+    position: absolute;
+    display: block;
+    contain: content;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    pointer-events: none;
+    z-index: -99;
+    // background: transparent;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
 a {
   &.router-link {
     &-active {
@@ -121,6 +184,123 @@ a {
   }
 }
 
+// ---------- MENU BERANDA START ---------- //
+
+.mn{
+  position: absolute;
+  &_gambar{
+  }
+  &_pemko{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: -.7rem;
+    color: $abumuda4;
+  }
+  &_tpi{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: $abumuda4;
+    letter-spacing: .1rem;
+    margin-bottom: -2px;
+    position: relative;
+    &:before{
+      content: attr(data-text);
+      position: absolute;
+      background: linear-gradient(darken($oren,5) , $oren, lighten($oren,45));
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 100% 50%;
+      clip-path: ellipse(70px 70px at -2.54% -9.25%);
+      animation: swing 3s infinite;
+      animation-direction: alternate;
+    }
+  }
+  &_motto{
+    color:$abumuda4;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    margin-bottom: -5px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: -10px;
+    ul{
+      margin-left: -38px;
+      li {
+          padding: 0 10px;
+          height: 45px;
+          margin-bottom: 45px;
+          display: block;
+          list-style: none;
+      }
+    }
+  
+  }
+  &_menu{
+    &_item{
+        margin: .3rem;
+      &_link{
+        text-decoration: none;
+        font-size: .7rem;
+        
+        &_gambar{
+          padding: .7rem .1rem;
+          background-color: $abumuda3;
+          opacity: 0.7;
+          border: 3px solid lighten($biru,40);
+          border-radius: 1rem;
+          width: 3.7rem;
+          @include transisi;
+          &:hover{
+            box-shadow: 0 0 1px 3px rgba($oren, 0.8),
+                        0 0 1px 6px rgba($oren, 0.3),
+                        0 0 1px 9px rgba($biru, 0.1);
+          }
+          img{
+            width: 2.2rem;
+            aspect-ratio: auto 50/50;
+          }
+        }
+        &_txt{
+          max-width: 3.7rem;
+          opacity: 0.7;
+          color: $abumuda4;
+          @include transisi;
+        }
+        &:hover{
+          .mn_menu_item{
+            &_link{
+              &_gambar{
+                opacity: 1;
+                border-color: lighten($biru,5);
+              }
+              &_txt{
+                color: $oren;
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+    &_itemberanda{
+      &_link{
+        color: $abumuda4;
+        font-size: 2rem;
+        @include transisi();
+        &:hover{
+          color: $biru;
+        }
+      }
+    }
+  }
+}
+// ---------- MENU BERANDA END ---------- //
+
 
 // ---------- BERITA START ---------- //
 .berita{
@@ -212,10 +392,7 @@ a {
         margin-bottom: 1rem;
       }
       &_item{
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
         @include media-breakpoint-up(lg) {
           padding: 1rem;
         }
@@ -241,10 +418,7 @@ a {
           font-size: .7rem;
           font-weight: bold;
           color: $abumuda2;
-          transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+          @include transisi;
         }
         &_judul{
           font-size: .9rem;
@@ -283,10 +457,7 @@ a {
             background-color: $abumuda4;
             padding: .25rem .5rem;
             border-radius: .5rem;
-            transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            -webkit-transition: all .5s ease-out;
-            -o-transition: all .5s ease-out;
+            @include transisi;
           }
           .icon{
             margin-top: -2px;
@@ -299,26 +470,17 @@ a {
 
             }
             &_icon{
-              transition: all .5s ease-out;
-              -moz-transition: all .5s ease-out;
-              -webkit-transition: all .5s ease-out;
-              -o-transition: all .5s ease-out;
+              @include transisi;
             }
           }
           &_lihat{
             &_icon{
-              transition: all .5s ease-out;
-              -moz-transition: all .5s ease-out;
-              -webkit-transition: all .5s ease-out;
-              -o-transition: all .5s ease-out;
+              @include transisi;
             }
           }
           &_komen{
             &_icon{
-              transition: all .5s ease-out;
-              -moz-transition: all .5s ease-out;
-              -webkit-transition: all .5s ease-out;
-              -o-transition: all .5s ease-out;
+              @include transisi;
             }
           }
           &_kat{
@@ -326,10 +488,7 @@ a {
             //   display: none;
             // }
             &_icon{
-              transition: all .5s ease-out;
-              -moz-transition: all .5s ease-out;
-              -webkit-transition: all .5s ease-out;
-              -o-transition: all .5s ease-out;
+              @include transisi;
             }
           }
         }
@@ -409,10 +568,7 @@ a {
           .icon{
             font-size: .8rem;
             margin-top: -3px;
-            transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            -webkit-transition: all .5s ease-out;
-            -o-transition: all .5s ease-out;
+            @include transisi;
           }
         }
         &_opd{
@@ -460,10 +616,7 @@ a {
           .icon{
             font-size: .8rem;
             margin-top: -3px;
-            transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            -webkit-transition: all .5s ease-out;
-            -o-transition: all .5s ease-out;
+            @include transisi;
           }
         }
         &_penulis{
@@ -581,10 +734,7 @@ a {
         color: $hijau;
         font-weight: 800;
         text-decoration: none;
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
         &:hover{
           color: $pink;
         }
@@ -603,27 +753,15 @@ a {
   .card{
     background-color: lighten($abumuda4, 3);
     border-color: $abumuda3;
-    transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
+    @include transisi;
     &-header{
       background-color: lighten($warnasecondary,40);
       border-color: $abumuda3;
-      transition: all .5s ease-out;
-      -moz-transition: all .5s ease-out;
-      -webkit-transition: all .5s ease-out;
-      -o-transition: all .5s ease-out;
+      @include transisi;
       .judulWidget{
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
         .icon{
-          transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+          @include transisi;
         }
       }
     }
@@ -656,20 +794,14 @@ a {
           border-radius: .65rem;
           color: $abumuda1;
           font-size: .8rem;
-          transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+          @include transisi;
           &.list-group-item {
             border-bottom: 1px dashed $abumuda4;
           }
           &_badge{
             background-color: $warnadefault;
             font-size: .7rem;
-            transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            -webkit-transition: all .5s ease-out;
-            -o-transition: all .5s ease-out;
+            @include transisi;
           }
           &:hover{
             &.sb{
@@ -811,10 +943,7 @@ a {
   // ---------- ALBUM GALLERY LIST START ---------- //
   &_list{
     border-color: $abumuda3;
-    transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
+    @include transisi;
     &_gambar{
       max-height: 10rem;
       object-fit: cover;
@@ -827,18 +956,12 @@ a {
       &_opd{
         color: $merah;
         font-size: .7rem;
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
       }
       &_judul{
         font-size: .75rem;
         font-weight: 800;
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
       }
       &_deskripsi{
         color: $abumuda2;
@@ -854,33 +977,21 @@ a {
         &_tgl{
           font-size: .65rem;
           color: $abumuda3;
-          transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+          @include transisi;
           .icon{
-            transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+            @include transisi;
           }
         }
         &_jumgal{
           background-color: lighten($hijau,50);
           color: $abumuda1;
           font-size: .7rem;
-          transition: all .5s ease-out;
-          -moz-transition: all .5s ease-out;
-          -webkit-transition: all .5s ease-out;
-          -o-transition: all .5s ease-out;
+          @include transisi;
           .icon{
             color: $hijau;
             margin-top: -2px;
             font-size: .8rem;
-            transition: all .5s ease-out;
-            -moz-transition: all .5s ease-out;
-            -webkit-transition: all .5s ease-out;
-            -o-transition: all .5s ease-out;
+            @include transisi;
           }
         }
       }
@@ -937,10 +1048,7 @@ a {
   // ---------- GALLERY LIST START ---------- //
   &_list{
     border-color: $abumuda3;
-    transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
+    @include transisi;
     &_gambar{
       height: 8rem;
       object-fit: cover;
@@ -952,10 +1060,7 @@ a {
       padding: .6rem;
       &_judul{
         font-size: .7rem;
-        transition: all .5s ease-out;
-        -moz-transition: all .5s ease-out;
-        -webkit-transition: all .5s ease-out;
-        -o-transition: all .5s ease-out;
+        @include transisi;
       }
       &_deskripsi{
         color: $abumuda1;

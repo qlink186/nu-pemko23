@@ -9,7 +9,14 @@
         <span class="berita_detail_meta_atas_opd"><Icon name="ri:government-fill" class="me-1" />{{ beritadtl.nunker }}</span>
         <span class="berita_detail_meta_atas_tgl"><Icon name="ic:twotone-calendar-month" class="me-1" />{{ beritadtl.tanggal_terbit }}</span>
       </div>
-      <div class="berita_detail_gambar">
+      <div class="berita_detail_gambar" v-if="$device.isMobile">
+        <img
+          :src="config.public['dashboardUrl']+`/images/berita/small/`+beritadtl.post_gambar"
+          class="img-fluid rounded my-2"
+          :alt="beritadtl.judul_post"
+        />
+      </div>
+      <div class="berita_detail_gambar" v-else>
         <img
           :src="config.public['dashboardUrl']+`/images/berita/big/`+beritadtl.post_gambar"
           class="img-fluid rounded my-2"

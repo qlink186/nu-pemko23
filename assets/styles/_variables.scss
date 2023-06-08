@@ -27,25 +27,25 @@ $warnasecondary: $oren;
 
 
 .btn-primary{
-  --bs-btn-bg: rgb(31, 70, 144);
-  --bs-btn-border-color:rgb(31, 70, 144);
-  --bs-btn-disabled-bg:rgb(31, 70, 144);
-  --bs-btn-hover-bg: rgb(33, 33, 82);
-  --bs-btn-hover-border-color:rgb(26, 26, 70);
-  --bs-btn-active-bg:rgb(26, 26, 70);
-  --bs-btn-active-border-color:rgb(21, 21, 56);
-  --bs-btn-disabled-border-color:rgb(21, 21, 56);
+  --bs-btn-bg: #{$biru};
+  --bs-btn-border-color:#{$biru};
+  --bs-btn-disabled-bg:#{$biru};
+  --bs-btn-hover-bg: #{darken($biru,5)};
+  --bs-btn-hover-border-color:#{darken($biru,10)};
+  --bs-btn-active-bg:#{darken($biru,10)};
+  --bs-btn-active-border-color:#{darken($biru,15)};
+  --bs-btn-disabled-border-color:#{darken($biru,15)};
 }
 
 .btn-outline-primary{
-  --bs-btn-color: rgb(31, 70, 144);
-  --bs-btn-border-color:rgb(31, 70, 144);
-  --bs-btn-disabled-color:rgb(31, 70, 144);
-  --bs-btn-hover-bg: rgb(33, 33, 82);
-  --bs-btn-hover-border-color:rgb(26, 26, 70);
-  --bs-btn-active-bg:rgb(26, 26, 70);
-  --bs-btn-active-border-color:rgb(21, 21, 56);
-  --bs-btn-disabled-border-color:rgb(21, 21, 56);
+  --bs-btn-color: #{$biru};
+  --bs-btn-border-color:#{$biru};
+  --bs-btn-disabled-color:#{$biru};
+  --bs-btn-hover-bg: #{darken($biru,5)};
+  --bs-btn-hover-border-color:#{darken($biru,10)};
+  --bs-btn-active-bg:#{darken($biru,10)};
+  --bs-btn-active-border-color:#{darken($biru,15)};
+  --bs-btn-disabled-border-color:#{darken($biru,15)};
 }
 
 .btn{
@@ -54,4 +54,81 @@ $warnasecondary: $oren;
 
 .btn-sm{
   --bs-btn-font-size: .7rem;
+}
+
+@mixin transisi {
+  transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -webkit-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+}
+
+
+.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip5 { animation: flip5 12s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+  0% { margin-top: -180px; }
+  5% { margin-top: -90px;  }
+  50% { margin-top: -90px; }
+  55% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -180px; }
+}
+
+@keyframes flip3 {
+  0% { margin-top: -270px; }
+  5% { margin-top: -180px; }
+  33% { margin-top: -180px; }
+  38% { margin-top: -90px; }
+  66% { margin-top: -90px; }
+  71% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
+@keyframes flip4 {
+  0% { margin-top: -360px; }
+  5% { margin-top: -270px; }
+  25% { margin-top: -270px; }
+  30% { margin-top: -180px; }
+  50% { margin-top: -180px; }
+  55% { margin-top: -90px; }
+  75% { margin-top: -90px; }
+  80% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -360px; }
+}
+
+@keyframes flip5 {
+  0% { margin-top: -450px; }
+  5% { margin-top: -360px; }
+  20% { margin-top: -360px; }
+  25% { margin-top: -270px; }
+  40% { margin-top: -270px; }
+  45% { margin-top: -180px; }
+  60% { margin-top: -180px; }
+  65% { margin-top: -90px; }
+  80% { margin-top: -90px; }
+  85% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -450px; }
+}
+
+@keyframes swing{
+  0%{
+      -webkit-clip-path: ellipse(70px 70px at -2.54% -9.25%);
+    clip-path: ellipse(70px 70px at -2.54% -9.25%);
+  }
+  50%{
+    -webkit-clip-path: ellipse(70px 70px at 49.66% 64.36%);
+    clip-path: ellipse(70px 70px at 49.66% 64.36%);
+
+  }
+  100%{
+      -webkit-clip-path: ellipse(70px 70px at 102.62% -1.61%);
+    clip-path: ellipse(70px 70px at 102.62% -1.61%);
+  }
 }

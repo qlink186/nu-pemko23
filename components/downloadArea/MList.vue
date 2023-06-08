@@ -1,88 +1,89 @@
 <template>
-  <ul class="list-group lst_down_mb">
-    <li class="list-group-item list-group-item-action lst_down_mb_item">
-      <div class="me-auto lst_down_mb_item_desk">
-        <div class="lst_down_mb_item_desk_icon"><img src="~/assets/img/icon/format/pdf.svg" class="img-fluid mx-auto d-block"
-            alt="format"></div>
-        <div class="lst_down_mb_item_desk_konten ps-2">
-          <div class="lst_down_mb_item_desk_konten_judul">Pengumuman Kelulusan Seleksi Administrasi Pemilihan Calon Anggota Badan Penyelesaian Sengketa Konsumen (BPSK) Kota Tanjungpinang Periode Tahun 2023 - 2028</div>
-          <div class="lst_down_mb_item_desk_konten_desk">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-            esse dicta qui natus, mollitia earum amet debitis perferendis autem sequi perspiciatis nisi? Dolor ipsa eaque
-            veniam magni iste animi molestias.</div>
-          <div class="lst_down_mb_item_desk_konten_meta">
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />Diskominfo</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />Pengumuman</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />Serta Merta</span>
+  <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
+    <Loading />
+  </div>
+  <div v-else>
+    <ul class="list-group lst_down_mb">
+      <template v-for="(dwn, index) in dtdown.downloadarea" :key="dwn.id">
+        <li class="list-group-item list-group-item-action lst_down_mb_item">
+          <div class="me-auto lst_down_mb_item_desk">
+            <div class="lst_down_mb_item_desk_icon">
+              <nuxt-img :src="`/icon/format/`+dwn.format_file+`.svg`" type="image/svg+xml" class="img-fluid mx-auto d-block" alt="format" />
+            </div>
+            <div class="lst_down_mb_item_desk_konten ps-2">
+              <div class="lst_down_mb_item_desk_konten_judul">{{ dwn.nama_file }}</div>
+              <div class="lst_down_mb_item_desk_konten_desk" v-if="dwn.deskripsi_file">{{ dwn.deskripsi_file }}</div>
+              <div class="lst_down_mb_item_desk_konten_meta">
+                <span class="pe-3 lst_down_mb_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />{{ dwn.nunker }}</span>
+                <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsdok" v-if="dwn.jenis_file"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />{{ dwn.jenis_file }}</span>
+                <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />{{ dwn.kategori_dip }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="align-middle text-center lst_down_mb_item_tgl">{{ dwn.tanggal_file }}</div>
+          <div class="d-flex">
+            <div class="flex-fill pe-1 d-grid gap-2">
+              <NuxtLink class="btn btn-primary" type="button" :to="config.public['dashboardUrl']+`/data-download/`+dwn.guid">
+                <Icon name="line-md:download-loop" />Download
+              </NuxtLink>
+            </div>
+            <div class="flex-fill ps-1 d-grid gap-2">
+              <NuxtLink class="btn btn-warning" type="button" :to="`/data/download-area/`+dwn.id">
+                <Icon name="ph:magnifying-glass-plus-bold"/>Selengkapnya
+              </NuxtLink>
+            </div>
+            
+          </div>
+        </li>
+      </template>
+      <!-- <li class="list-group-item list-group-item-action lst_down_mb_item">
+        <div class="me-auto lst_down_mb_item_desk">
+          <div class="lst_down_mb_item_desk_icon"><img src="~/assets/img/icon/format/pdf.svg" class="img-fluid mx-auto d-block"
+              alt="format"></div>
+          <div class="lst_down_mb_item_desk_konten ps-2">
+            <div class="lst_down_mb_item_desk_konten_judul">Pengumuman Kelulusan Seleksi Administrasi Pemilihan Calon Anggota Badan Penyelesaian Sengketa Konsumen (BPSK) Kota Tanjungpinang Periode Tahun 2023 - 2028</div>
+            <div class="lst_down_mb_item_desk_konten_desk">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
+              esse dicta qui natus, mollitia earum amet debitis perferendis autem sequi perspiciatis nisi? Dolor ipsa eaque
+              veniam magni iste animi molestias.</div>
+            <div class="lst_down_mb_item_desk_konten_meta">
+              <span class="pe-3 lst_down_mb_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />Diskominfo</span>
+              <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />Pengumuman</span>
+              <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />Serta Merta</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="align-middle text-center lst_down_mb_item_tgl">22 Desember 2023</div>
-      <div class="d-flex">
-        <div class="flex-fill pe-1 d-grid gap-2">
-          <button class="btn btn-primary" type="button">
-            <Icon name="line-md:download-loop" />Download
-          </button>
-        </div>
-        <div class="flex-fill ps-1 d-grid gap-2">
-          <NuxtLink class="btn btn-warning" type="button" to="/data/download-area/1">
-            <Icon name="ph:magnifying-glass-plus-bold"/>Selengkapnya
-          </NuxtLink>
-        </div>
-        
-      </div>
-    </li>
-    <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_mb_item">
-      <div class="me-auto d-flex align-items-center lst_down_mb_item_desk">
-        <div class="lst_down_mb_item_desk_icon"><img src="~/assets/img/icon/format/doc.svg" class="img-fluid mx-auto d-block"
-            alt="format"></div>
-        <div class="lst_down_mb_item_desk_konten ps-2">
-          <div class="lst_down_mb_item_desk_konten_judul">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
-          <div class="lst_down_mb_item_desk_konten_desk">Lorem ipsum dolor sit,</div>
-          <div class="lst_down_mb_item_desk_konten_meta">
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />Diskominfo</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />Pengumuman</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />Serta Merta</span>
+        <div class="align-middle text-center lst_down_mb_item_tgl">22 Desember 2023</div>
+        <div class="d-flex">
+          <div class="flex-fill pe-1 d-grid gap-2">
+            <button class="btn btn-primary" type="button">
+              <Icon name="line-md:download-loop" />Download
+            </button>
+          </div>
+          <div class="flex-fill ps-1 d-grid gap-2">
+            <NuxtLink class="btn btn-warning" type="button" to="/data/download-area/1">
+              <Icon name="ph:magnifying-glass-plus-bold"/>Selengkapnya
+            </NuxtLink>
           </div>
         </div>
-      </div>
-      <div class="align-middle text-center lst_down_mb_item_tgl">22 Desember 2023</div>
-      <div class="lst_down_mb_item_aksi d-grid gap-1 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary btn-sm" type="button">
-          <Icon name="line-md:download-loop" />
-        </button>
-        <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
-          <Icon name="ph:magnifying-glass-plus-bold"/>
-        </NuxtLink>
-      </div>
-    </li>
-    <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_mb_item">
-      <div class="me-auto d-flex align-items-center lst_down_mb_item_desk">
-        <div class="lst_down_mb_item_desk_icon"><img src="~/assets/img/icon/format/zip.svg" class="img-fluid mx-auto d-block"
-            alt="format"></div>
-        <div class="lst_down_mb_item_desk_konten ps-2">
-          <div class="lst_down_mb_item_desk_konten_judul">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
-          <div class="lst_down_mb_item_desk_konten_desk">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-            esse dicta qui natus, mollitia earum amet debitis perferendis autem sequi perspiciatis nisi? Dolor ipsa eaque
-            veniam magni iste animi molestias.</div>
-          <div class="lst_down_mb_item_desk_konten_meta">
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_opd"><Icon name="ri:government-fill" class="pe-1" />Diskominfo</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />Pengumuman</span>
-            <span class="pe-3 lst_down_mb_item_desk_konten_meta_jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />Serta Merta</span>
-          </div>
-        </div>
-      </div>
-      <div class="align-middle text-center lst_down_mb_item_tgl">22 Desember 2023</div>
-      <div class="lst_down_mb_item_aksi d-grid gap-1 d-md-flex justify-content-md-end">
-        <button class="btn btn-primary btn-sm" type="button">
-          <Icon name="line-md:download-loop" />
-        </button>
-        <NuxtLink class="btn btn-warning btn-sm" type="button" to="/data/download-area/1">
-          <Icon name="ph:magnifying-glass-plus-bold"/>
-        </NuxtLink>
-      </div>
-    </li>
-  </ul>
+      </li> -->
+    </ul>
+  </div>
+  
 </template>
+
+<script setup lang="ts">
+  const config = useRuntimeConfig()
+
+  const { pending, error, refresh, data: dtdown } = await useLazyAsyncData(
+    'dtdown', 
+    () => $fetch(`download-area`,{
+      method: 'GET',
+      baseURL: config.public['apiUrl'],
+    })
+  );
+
+  // const { pending, data: dtdown } = await useFetch(config.public['apiUrl']+`download-area`)
+</script>
 
 <style lang="scss" scoped>
 $hitam:   rgb(39, 41, 42);

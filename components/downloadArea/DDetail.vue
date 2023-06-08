@@ -8,24 +8,47 @@
           <div class="justify-content-center">Unduh Berkas</div>
         </div>
         <div class="card-body">
-          <img src="~/assets/img/icon/format/pptx.svg" class="img-fluid mx-auto d-block mb-3"
-            alt="format" style="width: 80px;">
-          <h6 class="card-title">Pengumuman Kelulusan Seleksi Administrasi Pemilihan Calon Anggota Badan Penyelesaian Sengketa Konsumen (BPSK) Kota Tanjungpinang Periode Tahun 2023 - 2028</h6>
-          <p class="card-text mb-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam officiis officia ducimus mollitia voluptates eligendi sit in quod omnis. Minima repudiandae numquam quas dolore voluptates dicta modi architecto officia quae.</p>
-          <div class="mb-3 card-tgl"><Icon name="ic:twotone-calendar-month" class="pe-1" />12 Maret 2023</div>
-          <a href="#" class="btn btn-primary btn-sm btnicon"><Icon name="line-md:download-loop" class="btnicon-down" />UNDUH</a>
+          <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
+            <Loading />
+          </div>
+          <nuxt-img :src="`/icon/format/`+dtdowndtl.format_file+`.svg`" type="image/svg+xml" class="img-fluid mx-auto d-block mb-3" alt="format" style="width: 80px;" />
+          <p class="card-text mb-2" style="font-size:.65rem">{{ dtdowndtl.guid }}</p>
+          <h6 class="card-title">{{ dtdowndtl.nama_file }}</h6>
+          <p class="card-text mb-2">{{ dtdowndtl.deskripsi_file }}</p>
+          <div class="mb-3 card-tgl"><Icon name="ic:twotone-calendar-month" class="pe-1" />{{ dtdowndtl.tanggal_file }}</div>
+          <NuxtLink :to="config.public['dashboardUrl']+`/data-download/`+dtdowndtl.guid" class="btn btn-primary btn-sm btnicon"><Icon name="line-md:download-loop" class="btnicon-down" />UNDUH</NuxtLink>
         </div>
         <div class="card-footer text-muted">
-          <span class="pe-3 card-footer-opd"><Icon name="ri:government-fill" class="pe-1" />Diskominfo</span>
-          <span class="pe-3 card-footer-jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />Pengumuman</span>
-          <span class="pe-3 card-footer-jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />Serta Merta</span>
+          <span class="pe-3 card-footer-opd"><Icon name="ri:government-fill" class="pe-1" />{{ dtdowndtl.nunker }}</span><br />
+          <span class="pe-3 card-footer-jnsdok"><Icon name="icon-park-twotone:view-grid-detail" class="pe-1" />{{ dtdowndtl.jenis_file }}</span>
+          <span class="pe-3 card-footer-jnsinf"><Icon name="ic:twotone-view-day" class="pe-1" />{{ dtdowndtl.kategori_dip }}</span>
           <br class="d-block d-md-none"/>
-          <span class="pe-3 card-footer-tgl"><Icon name="ic:twotone-calendar-month" class="pe-1" />Tanggal Unggah : 12 Maret 2023</span>
+          <span class="pe-3 card-footer-tgl"><Icon name="ic:twotone-calendar-month" class="pe-1" />Tanggal Unggah : {{ dtdowndtl.createdAt }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+
+<script setup lang="ts">
+  const route = useRoute()
+  const config = useRuntimeConfig()
+  
+  const { pending, data: dtdowndtl } = await useFetch(config.public['apiUrl']+`download-area/${route.params.slug}`)
+
+  useSeoMeta({
+    title: dtdowndtl.value?.nama_file,
+    ogTitle: dtdowndtl.value?.nama_file,
+    description: dtdowndtl.value?.deskripsi_file,
+    ogDescription: dtdowndtl.value?.deskripsi_file,
+    // ogImage: 'https://example.com/image.png',
+    ogImage: config.public['dashboardUrl']+`/icon/format/`+dtdowndtl.value?.format_file+`.svg`,
+    twitterCard: 'summary_large_image',
+  })
+
+</script>
+
 
 <style lang="scss" scoped>
 $hitam:   rgb(39, 41, 42);

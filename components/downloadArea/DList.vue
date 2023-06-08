@@ -1,6 +1,6 @@
 <template>
-  <div v-if="pending">
-    Loading ...
+  <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
+    <Loading />
   </div>
   <div v-else>
     <ul class="list-group lst_down_ds">
@@ -24,9 +24,9 @@
           </div>
           <div class="align-middle text-center lst_down_ds_item_tgl">{{ dwn.tanggal_file }}</div>
           <div class="lst_down_ds_item_aksi d-grid gap-1 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary btn-sm" type="button">
+            <NuxtLink class="btn btn-primary btn-sm" type="button" :to="config.public['dashboardUrl']+`/data-download/`+dwn.guid">
               <Icon name="line-md:download-loop" />
-            </button>
+            </NuxtLink>
             <NuxtLink class="btn btn-warning btn-sm" type="button" :to="`/data/download-area/`+dwn.id">
               <Icon name="ph:magnifying-glass-plus-bold"/>
             </NuxtLink>
@@ -34,6 +34,7 @@
         </li>
       </template>
     </ul>
+    <Pagination />
   </div>
 </template>
 

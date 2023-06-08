@@ -53,3 +53,4 @@
       baseURL: config.public['apiUrl'],
     })
   );
+</script>

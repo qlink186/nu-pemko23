@@ -21,9 +21,7 @@ const props = defineProps({
   currentPage: Number,
 })
 
-const tot = ref(props.totalPages) 
-
-console.log(tot)
+const tot = toRef(props.totalPages) 
 
 defineEmits(['ganti','next', 'previous'])
 </script>

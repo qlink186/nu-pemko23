@@ -13,8 +13,7 @@ useSeoMeta({
 <template>
   <NuxtLayout name="sidebar">
     <template #sdbar>
-      <SidebarBeritaKategori />
-      <SidebarBeritaPopuler />
+      <SidebarDownloadareaCari />
     </template>
     <template #konten>
       <div v-if="$device.isMobile">

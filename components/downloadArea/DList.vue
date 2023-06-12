@@ -1,5 +1,5 @@
 <template>
-  <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
+  <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 800px;">
     <Loading />
   </div>
   <div v-else>

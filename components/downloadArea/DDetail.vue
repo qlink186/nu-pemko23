@@ -4,7 +4,7 @@
       <div class="card text-center my-4">
         <div class="card-header d-flex ">
           <!-- <button type="button" class="btn-close justify-content-start me-2" aria-label="Close"></button> -->
-          <NuxtLink type="button" to="/data/download-area" class="btn-close me-2 d-flex justify-content-end" aria-label="Close"></NuxtLink>
+          <NuxtLink type="button" class="btn-close me-2 d-flex justify-content-end" aria-label="Close" @click="$router.back()"></NuxtLink>
           <div class="justify-content-center">Unduh Berkas</div>
         </div>
         <div class="card-body">
@@ -46,6 +46,7 @@
     ogImage: config.public['dashboardUrl']+`/icon/format/`+dtdowndtl.value?.format_file+`.svg`,
     twitterCard: 'summary_large_image',
   })
+  
 
 </script>
 

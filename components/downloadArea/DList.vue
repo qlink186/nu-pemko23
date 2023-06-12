@@ -3,8 +3,8 @@
     <Loading />
   </div>
   <div v-else>
-    <ul class="list-group lst_down_ds">
-      <template v-for="(dwn, index) in dtdown.downloadarea" :key="dwn.id">
+    <ul class="list-group lst_down_ds" v-if="dtdown?.downloadarea">
+      <template v-for="dwn in dtdown.downloadarea" :key="dwn.id">
         <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_ds_item">
           <div class="me-auto d-flex align-items-center lst_down_ds_item_desk">
             <div class="lst_down_ds_item_desk_icon">
@@ -34,20 +34,61 @@
         </li>
       </template>
     </ul>
-    <Pagination />
+    <div class="text-center">Menampilkan <strong>{{ dtdown?.limit }}</strong> data dari <strong>{{ dtdown.totalItems }}</strong> data</div>
+    <div>Jumlah Item : {{ dtdown.totalItems }}</div>
+    <div>Limit Perhalaman : {{ dtdown.limit }}</div>
+    <div>Jumlah Halaman : {{ dtdown.totalPages}}</div>
+    <div>Halaman Saat ini : {{ dtdown.currentPage }}</div>
+    <!-- <button @click="previous()" v-if="currentPage > 1">Previous</button> -->
+    <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown?.totalPages" :currentPage="currentPage" />
+
+    <!-- <button @click="next()" v-if="currentPage < dtdown.totalPages">Next</button> -->
   </div>
 </template>
 
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
+  const size = ref()
+  const cari = ref('')
+  const currentPage = ref(0)
+
   const { pending, error, refresh, data: dtdown } = await useLazyAsyncData(
     'dtdown', 
-    () => $fetch(`download-area`,{
+    () => $fetch(`download-area?page=${currentPage.value}&?cari=${cari.value}&?size=${size.value}`,{
+      key: `userlist-${currentPage.value}`,
       method: 'GET',
       baseURL: config.public['apiUrl'],
-    })
+      params: {
+        currentPage: currentPage.value,
+        cari: cari.value,
+        size: size.value,
+      }
+    }), {
+      watch: [
+        size,
+        currentPage,
+        cari
+      ]
+    }
   );
+
+  const previous = () => {
+    if( currentPage.value != 0 ){
+      currentPage.value = currentPage.value -1 ;
+    }
+  }
+
+  const next = () => {
+    if( currentPage.value + 0 <= totalPages.value){
+      currentPage.value = currentPage.value + 1;
+    }
+  }
+
+  function refetch(pageNumber : Number){
+    currentPage.value = pageNumber
+    refresh()
+  }
 
   // const { pending, data: dtdown } = await useFetch(config.public['apiUrl']+`download-area`)
 </script>

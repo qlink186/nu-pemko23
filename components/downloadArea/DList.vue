@@ -41,7 +41,6 @@
     <div>Halaman Saat ini : {{ dtdown.currentPage }}</div>
     <!-- <button @click="previous()" v-if="currentPage > 1">Previous</button> -->
     <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown?.totalPages" :currentPage="currentPage" />
-
     <!-- <button @click="next()" v-if="currentPage < dtdown.totalPages">Next</button> -->
   </div>
 </template>

@@ -8,7 +8,7 @@
         <!-- <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 200px;">
           <Loading />
         </div> -->
-        <input class="form-control form-control-lg mb-3" type="text" placeholder="Cari" aria-label=".form-control-lg example">
+        <input class="form-control form-control-lg mb-3" type="text" placeholder="Cari" aria-label="form-control-lg example">
         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
           <option selected>10</option>
           <option value="1">10</option>

@@ -10,9 +10,13 @@
     twitterCard: 'summary_large_image',
   })
 
+  const detekperangkat = useRoute().params.isMobile == "true" ? "mobile-beranda" : "beranda"
+
   definePageMeta({
-    layout: "beranda",
+      layout: "beranda",
+    // layout: `${detekperangkat}`,
   });
+
 </script>
 
 

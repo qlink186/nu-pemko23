@@ -11,28 +11,26 @@
         <input class="form-control form-control-md mb-3" type="text" placeholder="Cari" aria-label="form-control-lg example">
         <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
           <option selected value="10">10</option>
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-          <option value="all">Semua</option>
+          <template v-for="(sz, index) in size" :key="index">
+            <option :value="sz">{{ sz }}</option>
+          </template>
         </select>
 
         <select class="form-select form-select-sm mb-3" aria-label="Jenis File">
-          <option selected value="0">-- Semua Jenis File --</option>
+          <option selected value="null">-- Semua Jenis File --</option>
           <template v-for="ji in jnsinf" :key="ji.id">
             <option :value="ji.id">{{ ji.jenis_file }}</option>
           </template>
         </select>
         <select class="form-select form-select-sm mb-3" aria-label="Jenis File">
-          <option selected value="0">-- Semua Kategori --</option>
+          <option selected value="null">-- Semua Kategori --</option>
           <template v-for="kat in kategori" :key="kat.id">
             <option :value="kat.id">{{ kat.kategori_dip }}</option>
           </template>
         </select>
 
         <select class="form-select form-select-sm" aria-label="Jenis File">
-          <option selected value="0">-- Semua Unit Kerja --</option>
+          <option selected value="null">-- Semua Unit Kerja --</option>
           <template v-for="opd in daopd" :key="opd.kunker">
             <option :value="opd.kunker">{{ opd.nunker }}</option>
           </template>
@@ -45,6 +43,7 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
+  const size = [ 10, 25, 50, 100, "Semua"]
   const carijenisfile = ref('')
   const carikat = ref('')
   const cariopd = ref('')

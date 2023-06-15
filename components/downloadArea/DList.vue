@@ -49,7 +49,7 @@
   const config = useRuntimeConfig()
 
   const size = ref()
-  const cariAll = ref('kominfo')
+  const cariAll = ref('')
   const cariKat = ref('')
   const cariJenisFile = ref('')
   const cariOpd = ref('')

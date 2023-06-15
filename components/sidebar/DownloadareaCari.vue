@@ -47,6 +47,7 @@
 
   const carijenisfile = ref('')
   const carikat = ref('')
+  const cariopd = ref('')
 
   const { data: jnsinf } = await useLazyAsyncData(
     'jnsinf', 
@@ -80,9 +81,16 @@
 
   const { data: daopd } = await useLazyAsyncData(
     'daopd', 
-    () => $fetch(`download-area/opd`,{
+    () => $fetch(`download-area/opd?cari=${cariopd.value}`,{
       method: 'GET',
       baseURL: config.public['apiUrl'],
-    })
+      params: {
+        cari: cariopd.value
+      }
+    }), {
+      watch: [
+      cariopd
+      ]
+    }
   );
 </script>

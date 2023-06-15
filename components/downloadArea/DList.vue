@@ -49,25 +49,37 @@
   const config = useRuntimeConfig()
 
   const size = ref()
-  const cari = ref('')
+  const cariAll = ref('kominfo')
+  const cariKat = ref('')
+  const cariJenisFile = ref('')
+  const cariOpd = ref('')
+  const cariPeruntukan = ref('')
   const currentPage = ref(0)
 
   const { pending, error, refresh, data: dtdown } = await useLazyAsyncData(
     'dtdown', 
-    () => $fetch(`download-area?page=${currentPage.value}&?cari=${cari.value}&?size=${size.value}`,{
+    () => $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}`,{
       key: `userlist-${currentPage.value}`,
       method: 'GET',
       baseURL: config.public['apiUrl'],
       params: {
         currentPage: currentPage.value,
-        cari: cari.value,
         size: size.value,
+        cariAll: cariAll.value,
+        cariKat: cariKat.value,
+        cariJenisFile: cariJenisFile.value,
+        cariOpd: cariOpd.value,
+        cariPeruntukan: cariPeruntukan.value
       }
     }), {
       watch: [
         size,
         currentPage,
-        cari
+        cariAll,
+        cariKat,
+        cariJenisFile,
+        cariOpd,
+        cariPeruntukan
       ]
     }
   );

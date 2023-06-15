@@ -24,10 +24,17 @@
             <option :value="ji.id">{{ ji.jenis_file }}</option>
           </template>
         </select>
-        <select class="form-select form-select-sm" aria-label="Jenis File">
+        <select class="form-select form-select-sm mb-3" aria-label="Jenis File">
           <option selected value="0">-- Semua Kategori --</option>
           <template v-for="kat in kategori" :key="kat.id">
             <option :value="kat.id">{{ kat.kategori_dip }}</option>
+          </template>
+        </select>
+
+        <select class="form-select form-select-sm" aria-label="Jenis File">
+          <option selected value="0">-- Semua Unit Kerja --</option>
+          <template v-for="opd in daopd" :key="opd.kunker">
+            <option :value="opd.kunker">{{ opd.nunker }}</option>
           </template>
         </select>
       </div>
@@ -69,5 +76,13 @@
         carikat
       ]
     }
+  );
+
+  const { data: daopd } = await useLazyAsyncData(
+    'daopd', 
+    () => $fetch(`download-area/opd`,{
+      method: 'GET',
+      baseURL: config.public['apiUrl'],
+    })
   );
 </script>

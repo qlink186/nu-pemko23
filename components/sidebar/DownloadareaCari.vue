@@ -20,13 +20,13 @@
 
         <select class="form-select form-select-sm mb-3" aria-label="Jenis File">
           <option selected value="0">-- Semua Jenis File --</option>
-          <template v-for="ji in jnsinf.downloadarea" :key="ji.id">
+          <template v-for="ji in jnsinf" :key="ji.id">
             <option :value="ji.id">{{ ji.jenis_file }}</option>
           </template>
         </select>
         <select class="form-select form-select-sm" aria-label="Jenis File">
           <option selected value="0">-- Semua Kategori --</option>
-          <template v-for="kat in kategori.downloadarea" :key="kat.id">
+          <template v-for="kat in kategori" :key="kat.id">
             <option :value="kat.id">{{ kat.kategori_dip }}</option>
           </template>
         </select>
@@ -38,44 +38,35 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  const size = ref(100)
-  const cari = ref('')
-  const currentPage = ref(0)
+  const carijenisfile = ref('')
+  const carikat = ref('')
 
-  const { pending, error, refresh, data: jnsinf } = await useLazyAsyncData(
+  const { data: jnsinf } = await useLazyAsyncData(
     'jnsinf', 
-    () => $fetch(`download-area/jenisfile?page=${currentPage.value}&?cari=${cari.value}&?size=${size.value}`,{
+    () => $fetch(`download-area/jenisfile?cari=${carijenisfile.value}`,{
       method: 'GET',
       baseURL: config.public['apiUrl'],
       params: {
-        currentPage: currentPage.value,
-        cari: cari.value,
-        size: size.value,
+        cari: carijenisfile.value
       }
     }), {
       watch: [
-        size,
-        currentPage,
-        cari
+        carijenisfile
       ]
     }
   );
 
   const { data: kategori } = await useLazyAsyncData(
     'kategori', 
-    () => $fetch(`download-area/kat?page=${currentPage.value}&?cari=${cari.value}&?size=${size.value}`,{
+    () => $fetch(`download-area/kat?cari=${carikat.value}`,{
       method: 'GET',
       baseURL: config.public['apiUrl'],
       params: {
-        currentPage: currentPage.value,
-        cari: cari.value,
-        size: size.value,
+        cari: carikat.value
       }
     }), {
       watch: [
-        size,
-        currentPage,
-        cari
+        carikat
       ]
     }
   );

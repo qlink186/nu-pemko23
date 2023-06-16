@@ -3,7 +3,7 @@
     <Loading />
   </div>
   <div v-else>
-    <ul class="list-group lst_down_ds" v-if="dtdown?.downloadarea">
+    <ul class="list-group lst_down_ds" v-if="dtdown.downloadarea">
       <template v-for="dwn in dtdown.downloadarea" :key="dwn.id">
         <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_ds_item">
           <div class="me-auto d-flex align-items-center lst_down_ds_item_desk">
@@ -34,13 +34,13 @@
         </li>
       </template>
     </ul>
-    <div class="text-center">Menampilkan <strong>{{ dtdown?.limit }}</strong> data dari <strong>{{ dtdown.totalItems }}</strong> data</div>
+    <div class="text-center">Menampilkan <strong>{{ dtdown.limit }}</strong> data dari <strong>{{ dtdown.totalItems }}</strong> data</div>
     <div>Jumlah Item : {{ dtdown.totalItems }}</div>
     <div>Limit Perhalaman : {{ dtdown.limit }}</div>
     <div>Jumlah Halaman : {{ dtdown.totalPages}}</div>
     <div>Halaman Saat ini : {{ dtdown.currentPage }}</div>
     <!-- <button @click="previous()" v-if="currentPage > 1">Previous</button> -->
-    <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown?.totalPages" :currentPage="currentPage" />
+    <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown.totalPages" :currentPage="currentPage" />
     <!-- <button @click="next()" v-if="currentPage < dtdown.totalPages">Next</button> -->
   </div>
 </template>
@@ -58,7 +58,7 @@
 
   const { pending, error, refresh, data: dtdown } = await useLazyAsyncData(
     'dtdown', 
-    () => $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}`,{
+    () => $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
       key: `userlist-${currentPage.value}`,
       method: 'GET',
       baseURL: config.public['apiUrl'],
@@ -69,7 +69,7 @@
         cariKat: cariKat.value,
         cariJenisFile: cariJenisFile.value,
         cariOpd: cariOpd.value,
-        cariPeruntukan: cariPeruntukan.value
+        cariPeruntukan: cariPeruntukan.value,
       }
     }), {
       watch: [
@@ -79,7 +79,7 @@
         cariKat,
         cariJenisFile,
         cariOpd,
-        cariPeruntukan
+        cariPeruntukan,
       ]
     }
   );
@@ -91,7 +91,7 @@
   }
 
   const next = () => {
-    if( currentPage.value + 0 <= totalPages.value){
+    if( currentPage.value + 0 <= dtdown.value.totalPages){
       currentPage.value = currentPage.value + 1;
     }
   }

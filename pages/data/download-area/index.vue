@@ -20,6 +20,7 @@ useSeoMeta({
         <DownloadAreaMList />
       </div>
       <div v-else>
+        <DownloadAreaTes />
         <DownloadAreaDList />
       </div>
     </template>

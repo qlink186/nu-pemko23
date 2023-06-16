@@ -38,15 +38,17 @@
       </div>
     </div>
   </div>
+
+  
 </template>
 
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
   const size = [ 10, 25, 50, 100, "Semua"]
-  const carijenisfile = ref('')
-  const carikat = ref('')
-  const cariopd = ref('')
+  const carijenisfile: Ref<string> = ref('')
+  const carikat: Ref<string> = ref('')
+  const cariopd: Ref<string> = ref('')
 
   const { data: jnsinf } = await useLazyAsyncData(
     'jnsinf', 

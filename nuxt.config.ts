@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     // pageTransition: {
     //   name: 'page',
     //   mode: 'out-in' // default
+    // },
+    // layoutTransition: { 
+    //   name: 'layout', 
+    //   mode: 'out-in' 
     // }
   },
   css: [

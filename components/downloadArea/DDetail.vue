@@ -37,13 +37,19 @@
   
   const { pending, data: dtdowndtl } = await useFetch(config.public['apiUrl']+`download-area/${route.params.slug}`)
 
+  const seoTitle: Ref<string> = ref(dtdowndtl.value.nama_file)
+  const seoOgTitle: Ref<string> = ref(dtdowndtl.value.nama_file)
+  const seoDescription: Ref<string> = ref(dtdowndtl.value.deskripsi_file)
+  const seoOgDescription: Ref<string> = ref(dtdowndtl.value.deskripsi_file)
+  const seoOgImage: Ref<string> = ref(config.public['dashboardUrl']+`/icon/format/`+dtdowndtl.value?.format_file+`.svg`)
+
   useSeoMeta({
-    title: dtdowndtl.value?.nama_file,
-    ogTitle: dtdowndtl.value?.nama_file,
-    description: dtdowndtl.value?.deskripsi_file,
-    ogDescription: dtdowndtl.value?.deskripsi_file,
+    title: seoTitle,
+    ogTitle: seoOgTitle,
+    description: seoDescription,
+    ogDescription: seoOgDescription,
     // ogImage: 'https://example.com/image.png',
-    ogImage: config.public['dashboardUrl']+`/icon/format/`+dtdowndtl.value?.format_file+`.svg`,
+    ogImage: seoOgImage,
     twitterCard: 'summary_large_image',
   })
   

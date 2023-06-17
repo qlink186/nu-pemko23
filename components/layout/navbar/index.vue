@@ -38,12 +38,26 @@
               <Icon name="icomoon-free:folder" /> Data
             </a>
             <ul class="dropdown-menu">
+              <li><NuxtLink class="dropdown-item" to="/data/dokumentasi-kegiatan">Dokumentasi Kegiatan</NuxtLink></li>
               <li><NuxtLink class="dropdown-item" to="/data/download-area">Download Area</NuxtLink></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><NuxtLink class="dropdown-item" to="https://jdih.tanjungpinangkota.go.id">Jaringan Data dan Informasi Hukum</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/peg">Pegawai</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/subdomain">Subdomain</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/transparansi-pengelolaan-keuangan-daerah">Transparansi Pengelolaan Keuangan Daerah</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/unitkerja">Unit Kerja</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/website-opd">Website OPD</NuxtLink></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Icon name="icomoon-free:folder" /> Layanan
+            </a>
+            <ul class="dropdown-menu">
+              <li><NuxtLink class="dropdown-item" to="/layanan/casn">CASN</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/layanan/layanan-publik">Layanan Publik</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="https://mail.tanjungpinangkota.go.id">Email</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="https://ppid.tanjungpinangkota.go.id">Permohonan Informasi / PPID</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="https://tanjungpinangkota.lapor.go.id">Pengaduan Masyarakat / Lapor! (SP4N)</NuxtLink></li>
             </ul>
           </li>
         </ul>

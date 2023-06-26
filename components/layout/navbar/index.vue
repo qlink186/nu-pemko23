@@ -44,6 +44,7 @@
               <li><NuxtLink class="dropdown-item" to="/data/peg">Pegawai</NuxtLink></li>
               <li><NuxtLink class="dropdown-item" to="/data/subdomain">Subdomain</NuxtLink></li>
               <li><NuxtLink class="dropdown-item" to="/data/transparansi-pengelolaan-keuangan-daerah">Transparansi Pengelolaan Keuangan Daerah</NuxtLink></li>
+              <li><NuxtLink class="dropdown-item" to="/data/ipkd">Indeks Pengelolaan Keuangan Daerah</NuxtLink></li>
               <li><NuxtLink class="dropdown-item" to="/data/unitkerja">Unit Kerja</NuxtLink></li>
               <li><NuxtLink class="dropdown-item" to="/data/website-opd">Website OPD</NuxtLink></li>
             </ul>
@@ -70,7 +71,7 @@
 </nav>
   <nav class="navbar navbar-expand-lg navbar-light bg-light container">
     <div class="container-fluid">
-      <NuxtLink class="navbar-brand" to="/">Pemko TPI</NuxtLink>
+      <NuxtLink class="navbar-brand" to="/">{{ foo }}</NuxtLink>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -93,5 +94,8 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  const { pending, data: menu } = await useLazyAsyncData('menu', () => $fetch(config.public['apiUrl']+`menu`))
+  const { pending, data: menu } = await useAsyncData('menu', () => $fetch(config.public['apiUrl']+`menu`))
+
+  const foo = useFoo()
+
 </script>

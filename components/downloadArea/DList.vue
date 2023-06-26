@@ -35,6 +35,7 @@
         </li>
       </template>
     </ul>
+    <button @click="gantiLimit">Tampilkan 100 data</button>
     <div class="text-center">Menampilkan <strong>{{ dtdown.limit }}</strong> data dari <strong>{{ dtdown.totalItems }}</strong> data</div>
     <div>Jumlah Item : {{ dtdown.totalItems }}</div>
     <div>Limit Perhalaman : {{ dtdown.limit }}</div>
@@ -49,7 +50,7 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  const size = ref()
+  let size = ref()
   const cariAll = ref('')
   const cariKat = ref('')
   const cariJenisFile = ref('')
@@ -57,9 +58,14 @@
   const cariPeruntukan = ref('')
   const currentPage = ref(0)
 
-  const { pending, error, refresh, data: dtdown } = await useLazyAsyncData(
-    'dtdown', 
-    () => $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
+  const { 
+    pending, 
+    error, 
+    refresh, 
+    data: dtdown 
+  } = await useAsyncData(
+    'dtdown', () => 
+    $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
       key: `userlist-${currentPage.value}`,
       method: 'GET',
       baseURL: config.public['apiUrl'],
@@ -84,6 +90,11 @@
       ]
     }
   );
+
+  function gantiLimit(newLimit: Number) {
+    size.value = newLimit;
+    refresh();
+  }
 
   const previous = () => {
     if( currentPage.value != 0 ){

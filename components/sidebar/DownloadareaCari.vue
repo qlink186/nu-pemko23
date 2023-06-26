@@ -9,7 +9,7 @@
           <Loading />
         </div> -->
         <input class="form-control form-control-md mb-3" type="text" placeholder="Cari" aria-label="form-control-lg example">
-        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" @change="gantiLimit"> 
           <option selected value="10">10</option>
           <template v-for="(sz, index) in size" :key="index">
             <option :value="sz">{{ sz }}</option>
@@ -45,7 +45,7 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  const size = [ 10, 25, 50, 100, "Semua"]
+  const size = [ 25, 50, 100, "Semua"]
   const carijenisfile: Ref<string> = ref('')
   const carikat: Ref<string> = ref('')
   const cariopd: Ref<string> = ref('')
@@ -94,4 +94,6 @@
       ]
     }
   );
+  
+
 </script>

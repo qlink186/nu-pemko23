@@ -1,4 +1,4 @@
-import { useLocalStorage, useMouse, usePreferredDark } from '@vueuse/core'
+import { useLocalStorage, useMouse, usePreferredDark, useOnline  } from '@vueuse/core'
 
 export const useUtils = () => {
   // tracks mouse position
@@ -16,5 +16,7 @@ export const useUtils = () => {
     },
   )
 
-  return { x, y, isDark, store }
+  const online = useOnline()
+
+  return { x, y, isDark, store, online }
 }

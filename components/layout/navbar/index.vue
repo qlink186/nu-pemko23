@@ -94,7 +94,7 @@
 <script setup lang="ts">
 
   //ambil composable useNavbar
-  const { menu } = await useNavbar()
+  const { pending, menu } = await useNavbar()
 
   // const config = useRuntimeConfig()
 

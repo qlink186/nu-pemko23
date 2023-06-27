@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     'nuxt-swiper',
     '@nuxt/image-edge',
+    '@vueuse/nuxt',
   ],
 
   image: {

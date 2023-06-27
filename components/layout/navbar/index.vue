@@ -71,7 +71,7 @@
 </nav>
   <nav class="navbar navbar-expand-lg navbar-light bg-light container">
     <div class="container-fluid">
-      <NuxtLink class="navbar-brand" to="/">{{ foo }}</NuxtLink>
+      <NuxtLink class="navbar-brand" to="/">Pemko</NuxtLink>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -92,10 +92,12 @@
 </template>
 
 <script setup lang="ts">
-  const config = useRuntimeConfig()
 
-  const { pending, data: menu } = await useAsyncData('menu', () => $fetch(config.public['apiUrl']+`menu`))
+  //ambil composable useNavbar
+  const { menu } = await useNavbar()
 
-  const foo = useFoo()
+  // const config = useRuntimeConfig()
+
+  // const { pending, data: menu } = await useAsyncData('menu', () => $fetch(config.public['apiUrl']+`menu`))
 
 </script>

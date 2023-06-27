@@ -1,6 +1,6 @@
 <template>
-  <h6>PROFIL</h6>
-  <ul class="list-group list-group-flush footer_atas_id">
+  <h6 class="mt-2">PROFIL</h6>
+  <ul class="list-group list-group-flush footer_atas_menu">
     <template v-for="mn in menu" :key="mn.id">
       <template v-if="mn.ref === 1">
         <li class="nav-item">

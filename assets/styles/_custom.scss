@@ -86,12 +86,85 @@ a {
 .footer {
   color: $abumuda3;
 
+  h6{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: .9rem;
+    &:before{
+      content: "";
+      width: 50px;
+      height: 3px;
+      background-color: $warnasecondary;
+      display: block;
+      position: relative;
+      bottom: -1.35rem;
+      left: 0;
+    }
+  }
+
   &_atas {
     &_id {
+      border-right: 1px solid darken($abumuda1,10);
+      @include media-breakpoint-down(sm) {
+        border-right: none;
+        margin-bottom: 1rem;
+      }
       li {
         background: none;
-        color: $abumuda3;
-        border-bottom: 1px dashed $abumuda1;
+        color: darken($abumuda3,20);
+        // border-bottom: 1px dashed darken($abumuda1,10);
+        border-bottom: none;
+        list-style: none;
+        @include transisi;
+        .icon{
+          font-size: .9rem;
+          margin-top: -2px;
+        }
+        img{
+          max-width: 70px;
+        }
+      }
+      &_pemko,
+      &_tpi{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      &_pemko{
+        font-size: .65rem;
+        }
+      &_tpi{
+        font-size: .75rem;
+      }
+      &:hover{
+        li{
+          color: $abumuda3;
+        }
+      }
+    }
+    &_menu{
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 1rem;
+      }
+      li{
+        list-style: none;
+        border-bottom: 1px dashed darken($abumuda1,10);
+        padding-top: .15rem;
+        padding-bottom: .15rem;
+        font-size: .7rem;
+        color: darken($abumuda3,20);
+        @include transisi;
+        &:hover{
+          color: $warnasecondary;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+        .icon{
+          font-size: 1rem;
+          margin-top: -3px;
+        }
       }
     }
   }

@@ -3,17 +3,24 @@
     <div class="container-fluid bgHitam1 py-4">
     <div class="container footer_atas">
       <div class="row">
-        <div class="col-md-9 order-md-2">
+        <div class="col-md-10 order-md-2">
           <div class="row">
-            <div class="col-md-3 col-sm-6">
-              <LayoutFooterBawahProfil />
-              <LayoutFooterBawahLainnya />
+            <div class="col-md-5 col-sm-6">
+              <LayoutFooterAtasKontak />
+              <!-- <LayoutFooterAtasLainnya /> -->
             </div>
-            <div class="col-md-4 col-sm-6">kanan2</div>
-            <div class="col-md-5 col-sm-12">kanan3</div>
+            <div class="col-md-2 col-sm-6">
+              <LayoutFooterAtasProfil />
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <LayoutFooterAtasSosmed />
+            </div>
+            <div class="col-md-2 col-sm-12">
+              <LayoutFooterAtasJumPengunjung />
+            </div>
           </div>
         </div>
-        <div class="col-md-3 order-md-1">
+        <div class="col-md-2 order-md-1">
           <LayoutFooterAtasIdentitas />
         </div>
       </div>

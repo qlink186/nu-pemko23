@@ -132,3 +132,21 @@ $warnasecondary: $oren;
     clip-path: ellipse(70px 70px at 102.62% -1.61%);
   }
 }
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}

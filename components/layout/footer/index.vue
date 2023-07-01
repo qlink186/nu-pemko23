@@ -1,5 +1,11 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
     <div class="container-fluid bgHitam1 py-4">
     <div class="container footer_atas">
       <div class="row">
@@ -31,5 +37,5 @@
       <p class="my-0">© 2023 <a href="https://kominfo.tanjungpinangkota.go.id/" target="_BLANK">DISKOMINFO</a> Kota Tanjungpinang</p>
     </div>
   </div>
-  </div>
+  </footer>
 </template>

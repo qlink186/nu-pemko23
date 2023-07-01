@@ -13,7 +13,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="profil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <Icon name="icomoon-free:folder" /> Profil
+              <Icon name="iconamoon:profile-fill" /> Profil
             </a>
             <ul class="dropdown-menu">
               <li><NuxtLink class="dropdown-item" to="/profil/selayang-pandang">Selayang Pandang</NuxtLink></li>
@@ -31,7 +31,10 @@
             <NuxtLink class="nav-link" to="/gallery"><Icon name="fa:camera" /> Gallery</NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="/pengumuman"><Icon name="ic:twotone-fiber-new" /> Pengumuman</NuxtLink>
+            <NuxtLink class="nav-link" to="/pengumuman"><Icon name="ph:megaphone-bold" /> Pengumuman</NuxtLink>
+          </li>
+          <li class="nav-item">
+            <NuxtLink class="nav-link" to="/agenda"><Icon name="wpf:todo-list" /> Agenda</NuxtLink>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,7 +54,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <Icon name="icomoon-free:folder" /> Layanan
+              <Icon name="ic:twotone-room-service" /> Layanan
             </a>
             <ul class="dropdown-menu">
               <li><NuxtLink class="dropdown-item" to="/layanan/casn">CASN</NuxtLink></li>

@@ -15,6 +15,18 @@ $pink:    rgb(154, 22, 99);
 $warnadefault: $biru;
 $warnasecondary: $oren;
 
+.bgBiru{
+  background-color: $biru;
+}
+
+.bgBiru2{
+  background-color: darken($biru,10);
+}
+
+.bgOren{
+  background-color: $oren;
+}
+
 :root{
   --bs-body-font-size: .75rem;
   --bs-font-sans-serif: 'Nunito', sans-serif;

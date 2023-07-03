@@ -1,7 +1,9 @@
 <template>
   <footer class="footer">
     <div class="waves">
-      <div class="gedungWako"><img src="~/assets/img/gedung_wako.png" class="img-fluid mx-auto d-block" alt="Gedung Wako"></div>
+      <!-- <div class="gedungWako"> -->
+        <!-- <img src="~/assets/img/gedung_wako.png" class="img-fluid mx-auto d-block" alt="Gedung Wako"> -->
+      <!-- </div> -->
       <div class="wave" id="wave1"></div>
       <div class="wave" id="wave2"></div>
       <div class="wave" id="wave3"></div>

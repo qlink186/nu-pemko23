@@ -37,12 +37,58 @@ const slides = ref(Array.from({ length: 10 }, () => {
         }
       }"
     >
-      <SwiperSlide
+      <!-- <SwiperSlide
         v-for="(slide, idx) in slides"
         :key="idx"
         :style="`background-color: ${slide.bg}; color: ${slide.color}`"
       >
         {{ idx }}
+      </SwiperSlide> -->
+      <SwiperSlide>
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-9 order-lg-2">
+              <img src="https://tanjungpinangkota.go.id/images/berita/big/images.jpeg" class="object-fit-cover rounded-end" alt="...">
+            </div>
+            <div class="col-lg-3 order-lg-1">
+              <div class="card-body carou">
+                <div class="d-flex justify-content-between align-items-center carou_meta">
+                  <span class="carou_meta_jnsinfo">Berita Unit Kerja</span>
+                  <span class="badge badge-danger d-flex text-bg-secondary justify-content-end carou_meta_opd">Diskominfo</span>
+                </div>
+                <div class="carou_judul">MTQ XII Kota Tanjungpinang Segera Digelar</div>
+                <div class="card-text carou_tgl">
+                  <span class="txticon pe-3"><Icon name="icon-park-twotone:calendar" />25 Desember 2023</span>
+                </div>
+                <div class="carou_isi">Diskominfo Tanjungpinang – Perhelatan Musabaqah Tilawatil Qur’an (MTQ) XII tingkat Kota Tanjungpinang 2018 akan segera berlangsung dalam waktu dekat ini.</div>
+                <NuxtLink to="/berita/1" class="btn btn-warning btn-sm btnicon carou_tombol"><Icon name="ph:magnifying-glass-plus-bold"/>Selengkapnya</NuxtLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-9 order-lg-2">
+              <img src="https://tanjungpinangkota.go.id/images/berita/big/klenteng.jpeg" class="object-fit-cover rounded-end" alt="...">
+            </div>
+            <div class="col-lg-3 order-lg-1">
+              <div class="card-body carou">
+                <div class="d-flex justify-content-between align-items-center carou_meta">
+                  <span class="carou_meta_jnsinfo">Berita Unit Kerja</span>
+                  <span class="badge badge-danger d-flex text-bg-secondary justify-content-end carou_meta_opd">Diskominfo</span>
+                </div>
+                <div class="carou_judul">Hadiri Perayaan Ulang Tahun ke-33 Klenteng Chi Khong Huo Fooh, Wako Rahma Informasikan Keberadaan MPP</div>
+                <div class="carou_tgl">
+                  <span class="txticon pe-3"><Icon name="icon-park-twotone:calendar" />25 Desember 2023</span>
+                </div>
+                <div class="carou_isi">Kota Tanjungpinang - Wali Kota Tanjungpinang, Rahma menghadiri perayaan Ulang Tahun ke-33 Klenteng Chi Khong Huo Fooh, di lorong Teladan, Kelurahan Kemboja, Kota Tanjungpinang, Kepri, Senin (3/10/2022) malam. </div>
+                <NuxtLink to="/berita/1" class="btn btn-warning btn-sm btnicon"><Icon name="ph:magnifying-glass-plus-bold"/>Selengkapnya</NuxtLink>
+              </div>
+            </div>
+          </div>
+        </div>
       </SwiperSlide>
 
       <!-- useSwiper() within a swiper instance -->
@@ -141,7 +187,7 @@ $warnasecondary: $oren;
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  height: 20vh;
+  height: 50vh;
   font-size: 4rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;

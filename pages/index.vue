@@ -4,7 +4,7 @@
   useSeoMeta({
     title: 'Pemerintah Kota Tanjungpinang',
     ogTitle: 'Pemerintah Kota Tanjungpinang',
-    description: 'Website Resmi Pemerintah Kota Tanjungpinang',
+    description: 'Website Resmi Pemerintah Kota Tanjungpinang ',
     ogDescription: 'Website Resmi Pemerintah Kota Tanjungpinang',
     ogImage: 'https://example.com/image.png',
     twitterCard: 'summary_large_image',

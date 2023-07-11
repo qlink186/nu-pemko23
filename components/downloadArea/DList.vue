@@ -1,9 +1,10 @@
 <template>
-  <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 800px;">
+  <!-- <div v-if="pending" class="d-flex align-items-center justify-content-center" style="min-height: 800px;">
     <Loading />
   </div>
-  <div v-else>
-    
+  <div v-else> -->
+    <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll">
+    <button @click="resetFilter()">Reset</button>
     <ul class="list-group lst_down_ds" v-if="dtdown.downloadarea">
       <template v-for="dwn in dtdown.downloadarea" :key="dwn.id">
         <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_ds_item">
@@ -44,7 +45,7 @@
     <!-- <button @click="previous()" v-if="currentPage > 1">Previous</button> -->
     <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown.totalPages" :currentPage="currentPage" />
     <!-- <button @click="next()" v-if="currentPage < dtdown.totalPages">Next</button> -->
-  </div>
+  <!-- </div> -->
 </template>
 
 <script setup lang="ts">
@@ -63,7 +64,7 @@
     error, 
     refresh, 
     data: dtdown 
-  } = await useAsyncData(
+  } = await useLazyAsyncData(
     'dtdown', () => 
     $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
       key: `userlist-${currentPage.value}`,
@@ -111,6 +112,10 @@
   function refetch(pageNumber : Number){
     currentPage.value = pageNumber
     refresh()
+  }
+
+  function resetFilter() {
+    cariAll.value = '';
   }
 
   // const { pending, data: dtdown } = await useFetch(config.public['apiUrl']+`download-area`)

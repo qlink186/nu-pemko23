@@ -4,7 +4,25 @@
   </div>
   <div v-else> -->
     <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll">
-    <button @click="resetFilter()">Reset</button>
+    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" v-model="size" >
+      <option selected value="10">10</option>
+      <template v-for="(sz, index) in sizes" :key="index">
+        <option :value="sz">{{ sz }}</option>
+      </template>
+    </select>
+    <select class="form-select form-select-sm mb-3" aria-label="Jenis File" v-model="cariJenisFile">
+      <option selected value="">-- Semua Jenis File --</option>
+      <template v-for="ji in jnsinf" :key="ji.id">
+        <option :value="ji.id">{{ ji.jenis_file }}</option>
+      </template>
+    </select>
+    <select class="form-select form-select-sm" aria-label="Unit Kerja" v-model="cariOpd">
+      <option selected value="">-- Semua Unit Kerja --</option>
+      <template v-for="opd in daopd" :key="opd.kunker">
+        <option :value="opd.kunker">{{ opd.nunker }}</option>
+      </template>
+    </select>
+    <button @click="resetFilter()">Reset Penyaringan</button>
     <ul class="list-group lst_down_ds" v-if="dtdown.downloadarea">
       <template v-for="dwn in dtdown.downloadarea" :key="dwn.id">
         <li class="list-group-item list-group-item-action d-flex align-items-center lst_down_ds_item">
@@ -36,7 +54,6 @@
         </li>
       </template>
     </ul>
-    <button @click="gantiLimit">Tampilkan 100 data</button>
     <div class="text-center">Menampilkan <strong>{{ dtdown.limit }}</strong> data dari <strong>{{ dtdown.totalItems }}</strong> data</div>
     <div>Jumlah Item : {{ dtdown.totalItems }}</div>
     <div>Limit Perhalaman : {{ dtdown.limit }}</div>
@@ -51,13 +68,15 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  let size = ref()
-  const cariAll = ref('')
-  const cariKat = ref('')
-  const cariJenisFile = ref('')
-  const cariOpd = ref('')
-  const cariPeruntukan = ref('')
-  const currentPage = ref(0)
+  let size:Ref<number> = ref(10)
+  const cariAll:Ref<string>  = ref('')
+  const cariKat:Ref<string> = ref('')
+  const cariJenisFile:Ref<number> = ref()
+  const cariOpd:Ref<string> = ref('')
+  const cariPeruntukan:Ref<string> = ref('')
+  const currentPage:Ref<number> = ref(0)
+
+  const sizes = [ 25, 50, 100]
 
   const { 
     pending, 
@@ -92,10 +111,21 @@
     }
   );
 
-  function gantiLimit(newLimit: Number) {
-    size.value = newLimit;
-    refresh();
-  }
+  const { data: jnsinf } = await useLazyAsyncData(
+    'jnsinf', 
+    () => $fetch(`download-area/jenisfile`,{
+      method: 'GET',
+      baseURL: config.public['apiUrl']
+    })
+  );
+
+  const { data: daopd } = await useLazyAsyncData(
+    'daopd', 
+    () => $fetch(`download-area/opd`,{
+      method: 'GET',
+      baseURL: config.public['apiUrl'],
+    })
+  );
 
   const previous = () => {
     if( currentPage.value != 0 ){
@@ -116,6 +146,9 @@
 
   function resetFilter() {
     cariAll.value = '';
+    size.value = 10;
+    cariOpd.value = '';
+    cariJenisFile.value = '';
   }
 
   // const { pending, data: dtdown } = await useFetch(config.public['apiUrl']+`download-area`)

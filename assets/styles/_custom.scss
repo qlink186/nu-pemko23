@@ -889,8 +889,158 @@ a {
   }
   // ---------- BERITA DETAIL END ---------- //
 }
-
 // ---------- BERITA END ---------- //
+
+
+// ---------- LIST DOWNLOAD AREA START ---------- //
+.lst {
+  &_down {
+    &_ds {
+      &_item {
+        background-color: lighten($abumuda4,2);
+        border-radius: .5rem;
+        border: 1px solid $abumuda3;
+        margin-bottom: 1rem;
+        padding: .75rem;
+        transition: all .5s ease-out;
+        -moz-transition: all .5s ease-out;
+        -webkit-transition: all .5s ease-out;
+        -o-transition: all .5s ease-out;
+        &_desk {
+          &_icon {
+            min-width: 3.5rem;
+
+            img {
+              width: 50px;
+              filter: grayscale(1);
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+          }
+
+          &_konten {
+            max-width: 30rem;
+
+            &_judul {
+              font-size: .8rem;
+              font-weight: 600;
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+            }
+
+            &_desk {
+              font-size: .7rem;
+              color: $abumuda1;
+            }
+
+            &_meta {
+              color: $abumuda2;
+              font-size: .7rem;
+              transition: all .5s ease-out;
+              -moz-transition: all .5s ease-out;
+              -webkit-transition: all .5s ease-out;
+              -o-transition: all .5s ease-out;
+              &_opd,
+              &_jnsdok,
+              &_jnsinf{
+                transition: all .5s ease-out;
+                -moz-transition: all .5s ease-out;
+                -webkit-transition: all .5s ease-out;
+                -o-transition: all .5s ease-out;
+                .icon{
+                  font-size: .95rem;
+                  margin-top: -2px;
+                }
+              }
+              &_opd {
+              }
+
+              &_jnsdok {
+              }
+
+              &_jnsinf {
+              }
+            }
+          }
+        }
+
+        &_tgl {
+          color: $abumuda1;
+          font-size: .7rem;
+          width: 10rem;
+        }
+
+        &_aksi {
+          width: 4.7rem;
+          .btn{
+            font-size: 1.1rem;
+            padding: 0 .3rem;
+            border-radius: .4rem;
+          }
+        }
+
+        &:hover {
+          background-color: inherit;
+          border-color: lighten($abumuda2,20);
+          box-shadow: 0 0 10px 0px $abumuda3;
+            -webkit-box-shadow: 0 0 10px 0px $abumuda3;
+            -moz-box-shadow: 0 0 10px 0px $abumuda3;
+          .lst {
+            &_down {
+              &_ds {
+                &_item {
+                  &_desk {
+
+                    &_icon {
+                      img {
+                        filter: grayscale(0);
+                      }
+                    }
+
+                    &_konten {
+
+                      &_judul {
+                        color: $warnadefault;
+                      }
+
+                      &_desk {}
+
+                      &_meta {
+                        &_opd {
+                          color: $merah;
+                        }
+
+                        &_jnsdok {
+                          color: $hijau;
+                        }
+
+                        &_jnsinf {
+                          color: $oren;
+                        }
+                      }
+                    }
+                  }
+
+                  &_tgl {
+                    width: 10rem;
+                  }
+
+                  &_aksi {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------- LIST DOWNLOAD AREA END ---------- //
 
 // ---------- SIDEBAR START ---------- //
 

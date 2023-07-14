@@ -3,7 +3,7 @@
     <Loading />
   </div>
   <div v-else> -->
-    <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll">
+    <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll" />
     <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" v-model="size" @change="resetPagination()">
       <option selected value="10">10</option>
       <template v-for="sz in sizes" :key="sz">
@@ -84,15 +84,32 @@
           <NuxtLink class="page-link btn ">Sebelum</NuxtLink> 
           
         </li>
-        <li @click="refetch(pageNumber)" v-for="pageNumber in dtdown.totalPages" :key="pageNumber" class="page-item" :class="{'active': currentPage == pageNumber}">
-          <NuxtLink class="page-link btn">{{ pageNumber }}</NuxtLink>
-        </li>
+        <template v-if="dtdown.totalPages > 20">
+          <li @click="refetch(pageNumber)" v-for="pageNumber in dtdown.totalPages" :key="pageNumber" class="page-item" :class="{'active': currentPage == pageNumber}">
+            <template v-if="pageNumber <=20">
+              <NuxtLink class="page-link btn">{{ pageNumber }}</NuxtLink>
+            </template>
+          </li>
+          <li class="page-item" ><a class="page-link btn disabled">...</a></li>
+          <li @click="refetch(dtdown.totalPages -1)" class="page-item" :class="{'active': currentPage == pageNumber}">
+              <NuxtLink class="page-link btn">{{ dtdown.totalPages -1 }}</NuxtLink>
+          </li>
+          <li @click="refetch(dtdown.totalPages)" class="page-item" :class="{'active': currentPage == pageNumber}">
+              <NuxtLink class="page-link btn">{{ dtdown.totalPages}}</NuxtLink>
+          </li>
+        </template>
+        <template v-else>
+          <li @click="refetch(pageNumber)" v-for="pageNumber in dtdown.totalPages" :key="pageNumber" class="page-item" :class="{'active': currentPage == pageNumber}">
+              <NuxtLink class="page-link btn">{{ pageNumber }}</NuxtLink>
+          </li>
+        </template>
+      
         <li class="page-item" @click="next()" v-if="currentPage < dtdown.totalPages">
           <NuxtLink class="page-link btn">Selanjutnya</NuxtLink>
         </li>
       </ul>
     </nav>
-
+    <strong> {{ limitasi() }}</strong>
 
   <!-- </div> -->
   </template>
@@ -104,6 +121,12 @@
   const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 
   const { pending, error, refresh, dtdown, size, sizes, cariAll, cariKat, cariJenisFile, cariOpd, cariPeruntukan, currentPage } = await useDownloadAreaData()
+
+  const limitasi = (a:Array) => {
+    if( dtdown.value.totalPages > 20 && currentPage.value < dtdown.value.totalPages){
+      return a = currentPage.value + 1;
+    }
+  }
 
   const previous = () => {
     if( currentPage.value != 0 ){

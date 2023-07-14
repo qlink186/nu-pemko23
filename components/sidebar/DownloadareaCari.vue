@@ -18,12 +18,12 @@
             <option :value="ji.id">{{ ji.jenis_file }}</option>
           </template>
         </select>
-        <select class="form-select form-select-sm mb-3" aria-label="Kategori File" v-model="cariKat">
+        <!-- <select class="form-select form-select-sm mb-3" aria-label="Kategori File" v-model="cariKat">
           <option selected value="">-- Semua Kategori --</option>
           <template v-for="kat in kategori" :key="kat.id">
             <option :value="kat.id">{{ kat.kategori_dip }}</option>
           </template>
-        </select>
+        </select> -->
         <select class="form-select form-select-sm" aria-label="Unit Kerja" v-model="cariOpd">
           <option selected value="">-- Semua Unit Kerja --</option>
           <template v-for="opd in daopd" :key="opd.kunker">
@@ -43,12 +43,23 @@
 
   const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 
-  let size:Ref<number> = ref(10)
-  const sizes = [ 25, 50, 100]
-  const cariAll:Ref<string>  = ref('')
-  const cariKat:Ref<string> = ref('')
-  const cariJenisFile:Ref<string> = ref('')
-  const cariOpd:Ref<string> = ref('')
-  const cariPeruntukan:Ref<string> = ref('')
+  const { size, sizes, cariAll, cariJenisFile, cariOpd, } = await useDownloadAreaData()
+
+  // let size:Ref<number> = ref(10)
+  // const sizes = [ 25, 50, 100]
+  // const cariAll:Ref<string>  = ref('')
+  // const cariKat:Ref<string> = ref('')
+  // const cariJenisFile:Ref<string> = ref('')
+  // const cariOpd:Ref<string> = ref('')
+  // const cariPeruntukan:Ref<string> = ref('')
+
+    // defineEmits(['ganti','next', 'previous'])
+
+  function resetFilter() {
+    cariAll.value = '';
+    size.value = 10;
+    cariOpd.value = '';
+    cariJenisFile.value = '';
+  }
 
 </script>

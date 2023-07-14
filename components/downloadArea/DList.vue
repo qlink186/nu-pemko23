@@ -3,33 +3,33 @@
     <Loading />
   </div>
   <div v-else> -->
-    <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll" />
-    <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" v-model="size" @change="resetPagination()">
+    <!-- <input class="form-control form-control-lg" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll" /> -->
+    <!-- <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" v-model="size" @change="resetPagination()">
       <option selected value="10">10</option>
       <template v-for="sz in sizes" :key="sz">
         <option :value="sz">{{ sz }}</option>
       </template>
-    </select>
-    <select class="form-select form-select-sm mb-3" aria-label="Jenis File" v-model="cariJenisFile" @change="resetPagination()">
+    </select> -->
+    <!-- <select class="form-select form-select-sm mb-3" aria-label="Jenis File" v-model="cariJenisFile" @change="resetPagination()">
       <option selected value="">-- Semua Jenis File --</option>
       <template v-for="ji in jnsinf" :key="ji.id">
         <option :value="ji.id">{{ ji.jenis_file }}</option>
       </template>
-    </select>
-    <select class="form-select form-select-sm" aria-label="Unit Kerja" v-model="cariOpd" @change="resetPagination()">
+    </select> -->
+    <!-- <select class="form-select form-select-sm" aria-label="Unit Kerja" v-model="cariOpd" @change="resetPagination()">
       <option selected value="">-- Semua Unit Kerja --</option>
       <template v-for="opd in daopd" :key="opd.kunker">
         <option :value="opd.kunker">{{ opd.nunker }}</option>
       </template>
-    </select>
-    <button @click="resetFilter()" class="btn btn-primary btn-sm" type="button">Reset Penyaringan</button>
+    </select> -->
+    <!-- <button @click="resetFilter()" class="btn btn-primary btn-sm" type="button">Reset Penyaringan</button> -->
     <ul class="list-group lst_down_ds" v-if="dtdown.downloadarea">
       <template v-if="!dtdown.totalItems">
         <div class="row justify-content-center">
           <div class="col-lg-12 down_detail">
             <div class="card text-center">
               <div class="card-body py-5">
-                <Icon name="fxemoji:warningsign"  style="font-size: 2rem;" class="mb-2"/>
+                <Icon name="line-md:coffee-half-empty-twotone-loop"  style="font-size: 3rem;" class="mb-2"/>
                 <p class="card-text">Data Tidak Ditemukan</p>
               </div>
             </div>

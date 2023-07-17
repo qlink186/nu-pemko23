@@ -7,13 +7,13 @@
 
   const config = useRuntimeConfig()
 
-  let size = ref(100)
+  let size = ref(10)
   const cariAll = ref('')
   const cariKat = ref('')
   const cariJenisFile = ref('')
   const cariOpd = ref('')
   const cariPeruntukan = ref('')
-  const currentPage = ref(0)
+  const currentPage = ref(1)
 
   const { 
     pending, 
@@ -22,13 +22,12 @@
     data: dtdown 
   } = await useAsyncData(
     'dtdown', () => 
-    $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
+    $fetch(`download-area?cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,{
       key: `userlist-${currentPage.value}`,
       method: 'GET',
       baseURL: config.public['apiUrl'],
       params: {
         currentPage: currentPage.value,
-        size: size.value,
         cariAll: cariAll.value,
         cariKat: cariKat.value,
         cariJenisFile: cariJenisFile.value,
@@ -37,7 +36,6 @@
       }
     }), {
       watch: [
-        size,
         currentPage,
         cariAll,
         cariKat,

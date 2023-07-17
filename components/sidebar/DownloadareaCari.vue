@@ -43,7 +43,7 @@
 
   const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 
-  const { size, sizes, cariAll, cariJenisFile, cariOpd, } = await useDownloadAreaData()
+  const { size, sizes, cariAll, cariJenisFile, cariOpd, currentPage } = await useDownloadAreaData()
 
   // let size:Ref<number> = ref(10)
   // const sizes = [ 25, 50, 100]
@@ -60,6 +60,7 @@
     size.value = 10;
     cariOpd.value = '';
     cariJenisFile.value = '';
+    currentPage.value = 1;
   }
 
 </script>

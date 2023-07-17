@@ -25,16 +25,7 @@
     <!-- <button @click="resetFilter()" class="btn btn-primary btn-sm" type="button">Reset Penyaringan</button> -->
     <ul class="list-group lst_down_ds" v-if="dtdown.downloadarea">
       <template v-if="!dtdown.totalItems">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 down_detail">
-            <div class="card text-center">
-              <div class="card-body py-5">
-                <Icon name="line-md:coffee-half-empty-twotone-loop"  style="font-size: 3rem;" class="mb-2"/>
-                <p class="card-text">Data Tidak Ditemukan</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Kosong />
       </template>
       <template v-else>
         <template v-for="dwn in dtdown.downloadarea" :key="dwn.id">
@@ -75,12 +66,12 @@
     <div>Jumlah Halaman : {{ dtdown.totalPages}}</div>
     <div>Halaman Saat ini : {{ dtdown.currentPage }}</div>
     <!-- <button @click="previous()" v-if="currentPage > 1">Previous</button> -->
-    <!-- <Pagination @ganti="refetch" @next="next" @previous="previous" :totalPages="dtdown.totalPages" :currentPage="currentPage" /> -->
+    <Pagination @resetFilter="resetFilter()" @refetch="refetch" @next="next" @previous="previous" :totalPages="dtdown.totalPages" :currentPage="currentPage" />
     <!-- <button @click="next()" v-if="currentPage < dtdown.totalPages">Next</button> -->
 
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center pagination-sm">
-        <li class="page-item" @click="previous()" v-if="currentPage > 0">
+        <li class="page-item" @click="previous()" v-if="currentPage > 1">
           <NuxtLink class="page-link btn ">Sebelum</NuxtLink> 
           
         </li>
@@ -118,9 +109,10 @@
 <script setup lang="ts">
   const config = useRuntimeConfig()
 
-  const { jnsinf, daopd, kategori } = await useDownloadAtribut()
+  // const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 
-  const { pending, error, refresh, dtdown, size, sizes, cariAll, cariKat, cariJenisFile, cariOpd, cariPeruntukan, currentPage } = await useDownloadAreaData()
+  // const { pending, error, refresh, dtdown, size, sizes, cariAll, cariKat, cariJenisFile, cariOpd, cariPeruntukan, currentPage } = await useDownloadAreaData()
+  const {refresh, dtdown, size, cariAll, cariJenisFile, cariOpd, currentPage } = await useDownloadAreaData()
 
   const limitasi = (a:Array) => {
     if( dtdown.value.totalPages > 20 && currentPage.value < dtdown.value.totalPages){
@@ -129,20 +121,20 @@
   }
 
   const previous = () => {
-    if( currentPage.value != 0 ){
+    if( currentPage.value != 1 ){
       currentPage.value = currentPage.value -1 ;
     }
   }
 
   const next = () => {
-    if( currentPage.value + 0 <= dtdown.value.totalPages){
+    if( currentPage.value + 1 <= dtdown.value.totalPages){
       currentPage.value = currentPage.value + 1;
     }
   }
 
   function resetPagination(){
-    if( currentPage.value != 0){
-      currentPage.value = 0;
+    if( currentPage.value != 1){
+      currentPage.value = 1;
       refresh()
     }
   }
@@ -157,7 +149,7 @@
     size.value = 10;
     cariOpd.value = '';
     cariJenisFile.value = '';
-    currentPage.value = 0;
+    currentPage.value = 1;
     refresh()
   }
 </script>

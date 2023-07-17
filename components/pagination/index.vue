@@ -1,14 +1,14 @@
 <template>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center pagination-sm">
-      <li class="page-item" @click="$emit('previous')" v-if="currentPage > 0">
-        <NuxtLink class="page-link btn ">Sebelum</NuxtLink> 
+      <li class="page-item" @click="$emit('previous')" v-if="currentPage > 1">
+        <NuxtLink class="page-link btn "><span>&laquo;</span></NuxtLink> 
         
       </li>
-      <li @click="$emit('ganti', pageNumber)" v-for="pageNumber in tot" :key="pageNumber" class="page-item" :class="{'active': currentPage == pageNumber}">
+      <li @click="$emit('refetch', pageNumber)" v-for="pageNumber in dtdown.totalPages" :key="pageNumber" class="page-item" :class="{'active': currentPage == pageNumber}">
         <NuxtLink class="page-link btn">{{ pageNumber }}</NuxtLink></li>
-      <li class="page-item" @click="$emit('next')" v-if="currentPage < totalPages">
-        <NuxtLink class="page-link btn">Selanjutnya</NuxtLink>
+      <li class="page-item" @click="$emit('next')" v-if="currentPage < tot">
+        <NuxtLink class="page-link btn"><span>&raquo;</span></NuxtLink>
       </li>
     </ul>
   </nav>
@@ -20,8 +20,11 @@ const props = defineProps({
   totalPages: Number,
   currentPage: Number,
 })
+const {dtdown} = await useDownloadAreaData()
+
 
 const tot = toRef(props.totalPages) 
+const currentPage = toRef(props.currentPage)
 
-defineEmits(['ganti','next', 'previous'])
+defineEmits(['refetch','next', 'previous'])
 </script>

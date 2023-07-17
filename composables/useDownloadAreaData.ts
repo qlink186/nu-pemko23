@@ -7,7 +7,7 @@ export const useDownloadAreaData = () => {
   const cariJenisFile:Ref<string> = ref('')
   const cariOpd:Ref<string> = ref('')
   const cariPeruntukan:Ref<string> = ref('')
-  const currentPage:Ref<number> = ref(0)
+  const currentPage:Ref<number> = ref(1)
   
   // Download Area Data
   const { 
@@ -17,7 +17,7 @@ export const useDownloadAreaData = () => {
     data: dtdown 
   } = useAsyncData(
     'dtdown',
-    () => $fetch(`download-area?page=${currentPage.value}&size=${size.value}&cariAll=${cariAll.value}&cariKat=${cariKat.value}&cariJenisFile=${cariJenisFile.value}&cariOpd=${cariOpd.value}&cariPeruntukan${cariPeruntukan.value}`,
+    () => $fetch(`download-area`,
       {
         method: 'GET',
         baseURL: config.public['apiUrl'],

@@ -47,14 +47,6 @@
 <script setup lang="ts">
   // const config = useRuntimeConfig()
 
-  const selectedCity = ref();
-const cities = ref([
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }])
-
   const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 
   const { size, sizes, cariAll, cariJenisFile, cariOpd, currentPage } = await useDownloadAreaData()

@@ -36,7 +36,7 @@
         <Dropdown v-model="size" :options="sizes" placeholder="10" class="mb-3" />
         <Dropdown v-model="cariJenisFile" :options="jnsinf" filter optionValue="id" optionLabel="jenis_file" placeholder="-- Semua Jenis File --" class="mb-3" />
         <Dropdown v-model="cariOpd" :options="daopd" filter optionValue="kunker" optionLabel="nunker" placeholder="-- Semua Unit Kerja --" class="mb-3" />
-        <Button type="button" label="Reset Penyaringan" icon="pi pi-times" @click="resetFilter()" class="mt-2" size="small" />
+        <Button type="button" label="Reset Penyaringan" icon="pi pi-eraser" @click="resetFilter()" class="mt-2" size="small" />
       </div>
     </div>
   </div>

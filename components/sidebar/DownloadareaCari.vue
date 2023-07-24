@@ -5,6 +5,7 @@
         <h6 class="judulWidget mb-0"><Icon name="line-md:search-twotone" /> Penyaringan</h6>
       </div>
       <div class="card-body p-2">
+
         <input class="form-control form-control-lg mb-3" type="text" placeholder="Cari" aria-label="cari" v-model="cariAll">
         <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" v-model="size" >
           <option selected value="10">10</option>
@@ -31,6 +32,11 @@
           </template>
         </select>
         <button @click="resetFilter()" class="btn btn-primary btn-sm mt-3" type="button">Reset Penyaringan</button>
+        <InputText v-model="cariAll" type="text" size="large" placeholder="Cari" class="mb-3" />
+        <Dropdown v-model="size" :options="sizes" placeholder="10" class="mb-3" />
+        <Dropdown v-model="cariJenisFile" :options="jnsinf" filter optionValue="id" optionLabel="jenis_file" placeholder="-- Semua Jenis File --" class="mb-3" />
+        <Dropdown v-model="cariOpd" :options="daopd" filter optionValue="kunker" optionLabel="nunker" placeholder="-- Semua Unit Kerja --" class="mb-3" />
+        <Button type="button" label="Reset Penyaringan" icon="pi pi-times" @click="resetFilter()" class="mt-2" size="small" />
       </div>
     </div>
   </div>
@@ -40,6 +46,14 @@
 
 <script setup lang="ts">
   // const config = useRuntimeConfig()
+
+  const selectedCity = ref();
+const cities = ref([
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' }])
 
   const { jnsinf, daopd, kategori } = await useDownloadAtribut()
 

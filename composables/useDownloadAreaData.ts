@@ -1,7 +1,7 @@
 export const useDownloadAreaData = () => {
   const config = useRuntimeConfig()
   let size:Ref<number> = ref(10)
-  const sizes = [ 25, 50, 100]
+  const sizes = [ 10, 25, 50, 100]
   const cariAll:Ref<string>  = ref('')
   const cariKat:Ref<string> = ref('')
   const cariJenisFile:Ref<string> = ref('')
